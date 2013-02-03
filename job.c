@@ -426,17 +426,26 @@ int rsp_spawnvpe (int mode, const char *name, char *const argv[],
 
     rc = spawnvpe (mode, name, argv, envp);
 
-    /* make a response file list to clean up later if it was generated */
-    if (rc > 0 && argv == rsp_argv)
+    /* a response file was generated ? */
+    if (argv == rsp_argv)
       {
-        struct rsp_temp *rsp_temp_new;
+        /* make a response file list to clean up later if spawned a child
+         * successfully */
+        if (rc > 0)
+          {
+            struct rsp_temp *rsp_temp_new;
 
-        rsp_temp_new       = malloc (sizeof (*rsp_temp_new));
-        rsp_temp_new->pid  = rc;
-        rsp_temp_new->name = strdup (rsp_name);
-        rsp_temp_new->next = rsp_temp_start;
+            rsp_temp_new       = malloc (sizeof (*rsp_temp_new));
+            rsp_temp_new->pid  = rc;
+            rsp_temp_new->name = strdup (rsp_name);
+            rsp_temp_new->next = rsp_temp_start;
 
-        rsp_temp_start = rsp_temp_new;
+            rsp_temp_start = rsp_temp_new;
+          }
+          else if (rc < 0)  /* failed, then remove immediately */
+            remove (rsp_name);
+        /* rc == 0 : independent session. This can occur only with
+         * P_UNRELEATED. */
       }
 
     return rc;
