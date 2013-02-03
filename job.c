@@ -368,6 +368,81 @@ _is_unixy_shell (const char *path)
   /* in doubt assume a unix like shell */
   return 1;
 }
+
+/* OS/2 can process a command line up to 32K. But set the maximum length
+ * to 16K for the safety */
+#define MAX_CMD_LINE_LEN 16384
+
+struct rsp_temp
+  {
+    int    pid;
+    char  *name;
+    struct rsp_temp *next;
+  };
+
+static struct rsp_temp *rsp_temp_start = NULL;
+
+int rsp_spawnvpe (int mode, const char *name, char *const argv[],
+                  char *const envp[])
+{
+    char *rsp_argv[3];
+    char  rsp_name_arg[] = "@make-rsp-XXXXXX";
+    char *rsp_name = &rsp_name_arg[1];
+    int   arg_len = 0;
+    int   i;
+    int   rc;
+
+    for (i = 0; argv[i]; i++)
+        arg_len += strlen (argv[i]) + 1;
+
+    /* if a length of command line is longer than MAX_CMD_LINE_LEN, then use
+     * a response file. OS/2 cannot process a command line longer than 32K.
+     * Of course, a response file cannot be recognized by a normal OS/2
+     * program, that is, neither non-EMX or non-kLIBC. But it cannot accept
+     * a command line longer than 32K in itself. So using a response file
+     * in this case, is an acceptable solution */
+    if (arg_len > MAX_CMD_LINE_LEN)
+      {
+        int fd;
+
+        if ((fd = mkstemp (rsp_name)) == -1)
+            return -1;
+
+        /* write all the arguments except a 0th program name */
+        for (i = 1; argv[ i ]; i++)
+          {
+            write (fd, argv[i], strlen (argv[i]));
+            write (fd, "\n", 1);
+          }
+
+        close (fd);
+
+        rsp_argv[0] = argv[0];
+        rsp_argv[1] = rsp_name_arg;
+        rsp_argv[2] = NULL;
+
+        argv = rsp_argv;
+      }
+
+    rc = spawnvpe (mode, name, argv, envp);
+
+    /* make a response file list to clean up later if it was generated */
+    if (rc > 0 && argv == rsp_argv)
+      {
+        struct rsp_temp *rsp_temp_new;
+
+        rsp_temp_new       = malloc (sizeof (*rsp_temp_new));
+        rsp_temp_new->pid  = rc;
+        rsp_temp_new->name = strdup (rsp_name);
+        rsp_temp_new->next = rsp_temp_start;
+
+        rsp_temp_start = rsp_temp_new;
+      }
+
+    return rc;
+}
+
+#define spawnvpe rsp_spawnvpe
 #endif /* __EMX__ */
 
 
@@ -711,6 +786,35 @@ reap_children (int block, int err)
         free (c->sh_batch_file);
         c->sh_batch_file = NULL;
       }
+
+#ifdef __EMX__
+      {
+        struct rsp_temp *rsp_temp;
+        struct rsp_temp *rsp_temp_prev = NULL;
+
+        for (rsp_temp = rsp_temp_start; rsp_temp; rsp_temp = rsp_temp->next )
+          {
+            if (rsp_temp->pid == c->pid)
+              {
+                DB (DB_JOBS, (_("Cleaning up a temporary response file %s\n"),
+                              rsp_temp->name));
+
+                if (rsp_temp_start == rsp_temp)
+                    rsp_temp_start = rsp_temp->next;
+                else    /* rsp_temp_prev must not be NULL */
+                  rsp_temp_prev->next = rsp_temp->next;
+
+                remove (rsp_temp->name);
+                free (rsp_temp->name);
+                free (rsp_temp);
+
+                break;
+              }
+
+            rsp_temp_prev = rsp_temp;
+          }
+      }
+#endif
 
       /* If this child had the good stdin, say it is now free.  */
       if (c->good_stdin)
