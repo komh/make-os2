@@ -369,9 +369,8 @@ _is_unixy_shell (const char *path)
   return 1;
 }
 
-/* OS/2 can process a command line up to 32K. But set the maximum length
- * to 16K for the safety */
-#define MAX_CMD_LINE_LEN 16384
+/* OS/2 can process a command line up to 32K */
+#define MAX_CMD_LINE_LEN 32768
 
 struct rsp_temp
   {
