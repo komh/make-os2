@@ -1224,6 +1224,11 @@ f_mtime (struct file *file, int search)
   else
 #endif
     {
+#ifdef __EMX__
+      char *saved_name = file->name;
+
+try_again_with_dot_exe:
+#endif
       mtime = name_mtime (file->name);
 
       if (mtime == NONEXISTENT_MTIME && search && !file->ignore_vpath)
@@ -1258,6 +1263,23 @@ f_mtime (struct file *file, int search)
                 mtime = name_mtime (name);
 	    }
 	}
+#ifdef __EMX__
+      if (mtime == NONEXISTENT_MTIME)
+	{
+	  if (stricmp (_getext2 (file->name), ".exe"))
+	    {
+	      int name_len = strlen (file->name);
+
+	      file->name = alloca (name_len + 4/*.exe*/ + 1);
+	      memcpy (file->name, saved_name, name_len + 1);
+	      memcpy (file->name + name_len, ".exe", 4 + 1);
+	
+	      goto try_again_with_dot_exe;
+	    }
+	}
+
+      file->name = saved_name;
+#endif
     }
 
   /* Files can have bogus timestamps that nothing newly made will be
