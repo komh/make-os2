@@ -10,7 +10,4 @@ else
 fi
 export RANLIB="echo"
 export AR="emxomfar"
-./configure --prefix=/usr \
-            --infodir=/usr/share/info \
-            --mandir=/usr/share/man \
-            --without-included-gettext
+./configure --without-included-gettext
