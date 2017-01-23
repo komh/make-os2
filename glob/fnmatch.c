@@ -129,7 +129,7 @@ extern int errno;
 
 /* This function doesn't exist on most systems.  */
 
-# if !defined HAVE___STRCHRNUL && !defined _LIBC
+# if !defined HAVE___STRCHRNUL && !defined _LIBC && !defined __KLIBC__
 static char *
 __strchrnul (s, c)
      const char *s;
