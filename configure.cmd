@@ -10,4 +10,4 @@ else
 fi
 export RANLIB="echo"
 export AR="emxomfar"
-./configure --without-included-gettext
+./configure --without-included-gettext "$@"
