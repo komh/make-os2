@@ -1272,7 +1272,7 @@ try_again_with_dot_exe:
 	      name_len = strlen (file->name);
 
 	      file->name = alloca (name_len + 4/*.exe*/ + 1);
-	      memcpy (file->name, saved_name, name_len + 1);
+	      memcpy (file->name, saved_name, name_len);
 	      memcpy (file->name + name_len, ".exe", 4 + 1);
 	
 	      goto try_again_with_dot_exe;
