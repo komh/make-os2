@@ -1226,6 +1226,7 @@ f_mtime (struct file *file, int search)
     {
 #ifdef __EMX__
       char *saved_name = file->name;
+      int name_len;
 
 try_again_with_dot_exe:
 #endif
@@ -1268,7 +1269,7 @@ try_again_with_dot_exe:
 	{
 	  if (stricmp (_getext2 (file->name), ".exe"))
 	    {
-	      int name_len = strlen (file->name);
+	      name_len = strlen (file->name);
 
 	      file->name = alloca (name_len + 4/*.exe*/ + 1);
 	      memcpy (file->name, saved_name, name_len + 1);
@@ -1278,7 +1279,13 @@ try_again_with_dot_exe:
 	    }
 	}
 
-      file->name = saved_name;
+      name_len = strlen (saved_name);
+
+      /* If found in VPATH, use it. Otherwise restore file->name. */
+      if (strlen (file->name) == name_len + 4
+          && !strnicmp (file->name, saved_name, name_len)
+          && !stricmp (file->name + name_len, ".exe"))
+	file->name = saved_name;
 #endif
     }
 
