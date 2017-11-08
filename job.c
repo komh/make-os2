@@ -369,9 +369,6 @@ _is_unixy_shell (const char *path)
   return 1;
 }
 
-/* OS/2 can process a command line up to 32K */
-#define MAX_CMD_LINE_LEN 32768
-
 struct rsp_temp
   {
     int    pid;
@@ -384,28 +381,28 @@ static struct rsp_temp *rsp_temp_start = NULL;
 int rsp_spawnvpe (int mode, const char *name, char *const argv[],
                   char *const envp[])
 {
-    char *rsp_argv[3];
-    char  rsp_name_arg[] = "@make-rsp-XXXXXX";
-    char *rsp_name = &rsp_name_arg[1];
-    int   arg_len = 0;
-    int   i;
-    int   rc;
+    int rc;
+    int saved_errno;
 
-    for (i = 0; argv[i]; i++)
-        arg_len += strlen (argv[i]) + 1;
+    rc = spawnvpe (mode, name, argv, envp);
+    saved_errno = errno;
 
-    /* if a length of command line is longer than MAX_CMD_LINE_LEN, then use
-     * a response file. OS/2 cannot process a command line longer than 32K.
-     * Of course, a response file cannot be recognized by a normal OS/2
-     * program, that is, neither non-EMX or non-kLIBC. But it cannot accept
-     * a command line longer than 32K in itself. So using a response file
-     * in this case, is an acceptable solution */
-    if (arg_len > MAX_CMD_LINE_LEN)
+    /* arguments too long? */
+    if (rc == -1 && errno == EINVAL)
       {
-        int fd;
+        /* use a response file */
+        int   fd;
+        char  rsp_name_arg[] = "@make-rsp-XXXXXX";
+        char *rsp_name = &rsp_name_arg[1];
+        char *rsp_argv[3];
+        int   i;
 
         if ((fd = mkstemp (rsp_name)) == -1)
+          {
+            errno = saved_errno;
+
             return -1;
+          }
 
         /* write all the arguments except a 0th program name */
         for (i = 1; argv[ i ]; i++)
@@ -420,14 +417,9 @@ int rsp_spawnvpe (int mode, const char *name, char *const argv[],
         rsp_argv[1] = rsp_name_arg;
         rsp_argv[2] = NULL;
 
-        argv = rsp_argv;
-      }
+        rc = spawnvpe (mode, name, rsp_argv, envp);
+        saved_errno = errno;
 
-    rc = spawnvpe (mode, name, argv, envp);
-
-    /* a response file was generated ? */
-    if (argv == rsp_argv)
-      {
         /* make a response file list to clean up later if spawned a child
          * successfully */
         if (rc > 0)
@@ -441,11 +433,13 @@ int rsp_spawnvpe (int mode, const char *name, char *const argv[],
 
             rsp_temp_start = rsp_temp_new;
           }
-          else if (rc < 0)  /* failed, then remove immediately */
-            remove (rsp_name);
+        else if (rc < 0)  /* failed, then remove immediately */
+          remove (rsp_name);
         /* rc == 0 : independent session. This can occur only with
          * P_UNRELEATED. */
       }
+
+    errno = saved_errno;
 
     return rc;
 }
