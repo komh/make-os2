@@ -10,4 +10,6 @@ else
 fi
 export RANLIB="echo"
 export AR="emxomfar"
+
+test -f ./configure. || { echo "\`./configure not found !!!"; exit 1; }
 ./configure. --without-included-gettext "$@"
