@@ -1,120 +1,145 @@
 # Danish messages for make
-# Copyright (C) 2001 Free Software Foundation, Inc.
+# Copyright (C) 2001, 2016, 2022 Free Software Foundation, Inc.
+# This file is distributed under the same license as the make package.
+#
 # Byrial Ole Jensen <byrial@image.dk>, 2001
+# Ask Hjorth Larsen <asklarsen@gmail.com>, 2010, 2016, 2022.
+#
+# Ordliste
+# --------
+#
+# archive -> arkiv
+# member (i arkiv) -> element
+# library -> bibliotek
+# recipe -> opskrift?
+# pipe -> pipe
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: make 3.80\n"
+"Project-Id-Version: make-4.3.91\n"
 "Report-Msgid-Bugs-To: bug-make@gnu.org\n"
-"POT-Creation-Date: 2006-04-01 01:40-0500\n"
-"PO-Revision-Date: 2002-10-05 22:56+0200\n"
-"Last-Translator: Byrial Ole Jensen <byrial@image.dk>\n"
-"Language-Team: Danish <dansk@klid.dk>\n"
+"POT-Creation-Date: 2023-02-26 11:05-0500\n"
+"PO-Revision-Date: 2022-10-20 19:19+0200\n"
+"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
+"Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
+"Language: da\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Bugs: Report translation errors to the Language-Team address.\n"
 
-#: ar.c:53
+#: src/ar.c:47
 #, c-format
-msgid "attempt to use unsupported feature: `%s'"
-msgstr "fors¯g pÂ at bruge en ikke underst¯ttet facilitet: '%s'"
+msgid "attempt to use unsupported feature: '%s'"
+msgstr "fors√∏g p√• at bruge funktion som ikke underst√∏ttes: \"%s\""
 
-#: ar.c:137
+#: src/ar.c:127
+#, c-format
 msgid "touch archive member is not available on VMS"
-msgstr "'ber¯r arkivmedlem' er ikke tilgÊngelig pÂ VMS"
+msgstr "\"touch arkivelement\" er ikke tilg√¶ngelig p√• VMS"
 
-#: ar.c:168
+#: src/ar.c:151
 #, c-format
-msgid "touch: Archive `%s' does not exist"
-msgstr "ber¯r: Arkivet '%s' findes ikke"
+msgid "touch: Archive '%s' does not exist"
+msgstr "touch: Arkivet \"%s\" findes ikke"
 
-#: ar.c:171
+#: src/ar.c:154
 #, c-format
-msgid "touch: `%s' is not a valid archive"
-msgstr "ber¯r: '%s' er ikke et gyldigt arkiv"
+msgid "touch: '%s' is not a valid archive"
+msgstr "touch: \"%s\" er ikke et gyldigt arkiv"
 
-#: ar.c:178
+#: src/ar.c:161
 #, c-format
-msgid "touch: Member `%s' does not exist in `%s'"
-msgstr "ber¯r: Medlemmet '%s' findes ikke i '%s'"
+msgid "touch: Member '%s' does not exist in '%s'"
+msgstr "touch: Elementet \"%s\" findes ikke i \"%s\""
 
-#: ar.c:185
+#: src/ar.c:168
 #, c-format
-msgid "touch: Bad return code from ar_member_touch on `%s'"
-msgstr "ber¯r: Forkert returkode fra ar_member_touch pÂ '%s'"
+msgid "touch: Bad return code from ar_member_touch on '%s'"
+msgstr "touch: Forkert returkode fra ar_member_touch p√• \"%s\""
 
-#: arscan.c:69
+#: src/arscan.c:130
 #, c-format
-msgid "lbr$set_module failed to extract module info, status = %d"
-msgstr "lbr$set_module kunne ikke udtrÊkke modulinformation, status = %d"
+msgid "lbr$set_module() failed to extract module info, status = %d"
+msgstr "lbr$set_module() kunne ikke udtr√¶kke modulinformation, status = %d"
 
-#: arscan.c:154
+#: src/arscan.c:236
 #, c-format
-msgid "lbr$ini_control failed with status = %d"
-msgstr "lbr$ini_control fejlede med status = %d"
+msgid "lbr$ini_control() failed with status = %d"
+msgstr "lbr$ini_control() fejlede med status = %d"
 
-#: arscan.c:165
+#: src/arscan.c:261
 #, c-format
-msgid "unable to open library `%s' to lookup member `%s'"
-msgstr "kan ikke Âbne biblioteket '%s' for at s¯ge medlemmet '%s'"
+msgid "unable to open library '%s' to lookup member status %d"
+msgstr "kan ikke √•bne biblioteket \"%s\" for at sl√• elementstatus %d op"
 
-#: arscan.c:825
+#: src/arscan.c:402 src/arscan.c:406
 #, c-format
-msgid "Member `%s'%s: %ld bytes at %ld (%ld).\n"
-msgstr "Medlem '%s'%s: %ld byte ved %ld (/%ld).\n"
+msgid "Invalid %s for archive %s member %s"
+msgstr "Ugyldig %1$s for elementet %3$s i arkivet %2$s"
 
-#: arscan.c:826
+#: src/arscan.c:995
+#, c-format
+msgid "Member '%s'%s: %ld bytes at %ld (%ld).\n"
+msgstr "Element \"%s\"%s: %ld byte ved %ld (%ld).\n"
+
+#: src/arscan.c:996
 msgid " (name might be truncated)"
-msgstr " (navnet kan vÊre forkortet)"
+msgstr " (navnet kan v√¶re forkortet)"
 
-#: arscan.c:828
+#: src/arscan.c:999
 #, c-format
 msgid "  Date %s"
 msgstr "  Tidsstempel %s"
 
-#: arscan.c:829
+#: src/arscan.c:1000
 #, c-format
 msgid "  uid = %d, gid = %d, mode = 0%o.\n"
 msgstr "  uid = %d, gid = %d, modus = 0%o.\n"
 
-#: commands.c:422
+#: src/commands.c:379
+#, c-format
+msgid "Recipe has too many lines (limit %hu)"
+msgstr "Opskriften har for mange linjer (gr√¶nsen er %hu)"
+
+#: src/commands.c:501
 msgid "*** Break.\n"
 msgstr "*** Afbrydelse.\n"
 
-#: commands.c:545
+#: src/commands.c:629
 #, c-format
-msgid "*** [%s] Archive member `%s' may be bogus; not deleted"
-msgstr "*** [%s] Arkivmedlemmet '%s' er mÂske falsk; ikke slettet"
+msgid "*** [%s] Archive member '%s' may be bogus; not deleted"
+msgstr "*** [%s] Arkivelementet \"%s\" er m√•ske falsk; ikke slettet"
 
-#: commands.c:548
+#: src/commands.c:633
 #, c-format
-msgid "*** Archive member `%s' may be bogus; not deleted"
-msgstr "*** Arkivmedlemmet '%s' er mÂske falsk; ikke slettet"
+msgid "*** Archive member '%s' may be bogus; not deleted"
+msgstr "*** Arkivelementet \"%s\" er m√•ske falsk; ikke slettet"
 
-#: commands.c:561
+#: src/commands.c:647
 #, c-format
-msgid "*** [%s] Deleting file `%s'"
-msgstr "*** [%s] Sletter filen '%s'"
+msgid "*** [%s] Deleting file '%s'"
+msgstr "*** [%s] Sletter filen \"%s\""
 
-#: commands.c:563
+#: src/commands.c:649
 #, c-format
-msgid "*** Deleting file `%s'"
-msgstr "*** Sletter filen '%s'"
+msgid "*** Deleting file '%s'"
+msgstr "*** Sletter filen \"%s\""
 
-#: commands.c:599
-msgid "#  commands to execute"
-msgstr "#  kommandoer at udf¯re"
+#: src/commands.c:685
+msgid "#  recipe to execute"
+msgstr "#  kommandoer der skal k√∏res"
 
-#: commands.c:602
+#: src/commands.c:688
 msgid " (built-in):"
 msgstr " (indbyggede):"
 
-#: commands.c:604
+#: src/commands.c:690
 #, c-format
-msgid " (from `%s', line %lu):\n"
-msgstr " (fra '%s', linje %lu):\n"
+msgid " (from '%s', line %lu):\n"
+msgstr " (fra \"%s\", linje %lu):\n"
 
-#: dir.c:983
+#: src/dir.c:1108
 msgid ""
 "\n"
 "# Directories\n"
@@ -122,219 +147,250 @@ msgstr ""
 "\n"
 "# Filkataloger\n"
 
-#: dir.c:995
+#: src/dir.c:1120
 #, c-format
 msgid "# %s: could not be stat'd.\n"
-msgstr "# %s: kunne ikke unders¯ges med stat.\n"
+msgstr "# %s: kunne ikke unders√∏ges med stat.\n"
 
-#: dir.c:999
+#: src/dir.c:1123
 #, c-format
-msgid "# %s (key %s, mtime %d): could not be opened.\n"
-msgstr "# %s (n¯gle %s, mtime %d): kunne ikke Âbnes.\n"
+msgid "# %s (key %s, mtime %s): could not be opened.\n"
+msgstr "# %s (n√∏gle %s, mtime %s): kunne ikke √•bnes.\n"
 
-#: dir.c:1003
+#: src/dir.c:1127
 #, c-format
 msgid "# %s (device %d, inode [%d,%d,%d]): could not be opened.\n"
-msgstr "# %s (enhed %d, inode [%d,%d,%d]): kunne ikke Âbnes.\n"
+msgstr "# %s (enhed %d, inode [%d,%d,%d]): kunne ikke √•bnes.\n"
 
-#: dir.c:1008
+#: src/dir.c:1132
 #, c-format
 msgid "# %s (device %ld, inode %ld): could not be opened.\n"
-msgstr "# %s (enhed %ld, inode %ld): kunne ikke Âbnes.\n"
+msgstr "# %s (enhed %ld, inode %ld): kunne ikke √•bnes.\n"
 
-#: dir.c:1035
+#: src/dir.c:1156
 #, c-format
-msgid "# %s (key %s, mtime %d): "
-msgstr "# %s (n¯gle %s, mtime %d): "
+msgid "# %s (key %s, mtime %s): "
+msgstr "# %s (n√∏gle %s, mtime %s): "
 
-#: dir.c:1039
+#: src/dir.c:1160
 #, c-format
 msgid "# %s (device %d, inode [%d,%d,%d]): "
 msgstr "# %s (enhed %d, inode [%d,%d,%d]): "
 
-#: dir.c:1044
+#: src/dir.c:1165
 #, c-format
 msgid "# %s (device %ld, inode %ld): "
 msgstr "# %s (enhed %ld, inode %ld): "
 
-#: dir.c:1050 dir.c:1071
+#: src/dir.c:1169 src/dir.c:1190
 msgid "No"
 msgstr "Ingen"
 
-#: dir.c:1053 dir.c:1074
+#: src/dir.c:1172 src/dir.c:1193
 msgid " files, "
 msgstr " filer, "
 
-#: dir.c:1055 dir.c:1076
+#: src/dir.c:1174 src/dir.c:1195
 msgid "no"
 msgstr "ingen"
 
-#: dir.c:1058
+#: src/dir.c:1177
 msgid " impossibilities"
 msgstr " umuligheder"
 
-#: dir.c:1062
+#: src/dir.c:1181
 msgid " so far."
 msgstr " indtil videre."
 
-#: dir.c:1079
+#: src/dir.c:1198
 #, c-format
 msgid " impossibilities in %lu directories.\n"
 msgstr " umuligheder i %lu kataloger.\n"
 
-#: expand.c:128
+#: src/expand.c:113
 #, c-format
-msgid "Recursive variable `%s' references itself (eventually)"
-msgstr "Rekursiv variabel '%s' refererer (i sidste ende) til sig selv"
+msgid "%s:%lu: not recursively expanding %s to export to shell function\n"
+msgstr ""
+"%s:%lu: udfolder ikke %s rekursivt for at eksportere til skalfunktion\n"
 
-#: expand.c:266
+#: src/expand.c:149
+#, c-format
+msgid "Recursive variable '%s' references itself (eventually)"
+msgstr "Rekursiv variabel \"%s\" refererer (i sidste ende) til sig selv"
+
+#: src/expand.c:295
+#, c-format
 msgid "unterminated variable reference"
 msgstr "uafsluttet variabelreference"
 
-#: file.c:270
+#: src/file.c:269
 #, c-format
-msgid "Commands were specified for file `%s' at %s:%lu,"
-msgstr "Kommandoer var angivet for fil '%s' i %s:%lu,"
+msgid "Recipe was specified for file '%s' at %s:%lu,"
+msgstr "Opskrift blev angivet for filen \"%s\" i %s:%lu,"
 
-#: file.c:275
+#: src/file.c:274
 #, c-format
-msgid "Commands for file `%s' were found by implicit rule search,"
-msgstr "Kommandoer for fil '%s' blev fundet ved implicit regel-s¯gning,"
+msgid "Recipe for file '%s' was found by implicit rule search,"
+msgstr "Opskrift for filen \"%s\" blev fundet ved implicit regels√∏gning,"
 
-#: file.c:278
+#: src/file.c:278
 #, c-format
-msgid "but `%s' is now considered the same file as `%s'."
-msgstr "men '%s' bliver nu anset som samme fil som '%s'."
+msgid "but '%s' is now considered the same file as '%s'."
+msgstr "men \"%s\" bliver nu anset som samme fil som \"%s\"."
 
-#: file.c:281
+#: src/file.c:281
 #, c-format
-msgid "Commands for `%s' will be ignored in favor of those for `%s'."
-msgstr "Kommandoer for '%s' vil blive ignoreret til fordel for dem til '%s'."
+msgid "Recipe for '%s' will be ignored in favor of the one for '%s'."
+msgstr ""
+"Opskriften for \"%s\" vil blive ignoreret til fordel for den for \"%s\"."
 
-#: file.c:301
+#: src/file.c:301
 #, c-format
-msgid "can't rename single-colon `%s' to double-colon `%s'"
-msgstr "kan ikke Êndre enkelt-kolon '%s' til dobbelt-kolon '%s'"
+msgid "can't rename single-colon '%s' to double-colon '%s'"
+msgstr "kan ikke √¶ndre enkelt-kolon \"%s\" til dobbelt-kolon \"%s\""
 
-#: file.c:306
+#: src/file.c:307
 #, c-format
-msgid "can't rename double-colon `%s' to single-colon `%s'"
-msgstr "kan ikke Êndre dobbelt-kolon '%s' til enkelt-kolon '%s'"
+msgid "can't rename double-colon '%s' to single-colon '%s'"
+msgstr "kan ikke √¶ndre dobbelt-kolon \"%s\" til enkelt-kolon \"%s\""
 
-#: file.c:381
+#: src/file.c:404
 #, c-format
-msgid "*** Deleting intermediate file `%s'"
-msgstr "*** Sletter mellemfil '%s'"
+msgid "*** Deleting intermediate file '%s'"
+msgstr "*** Sletter mellemfil \"%s\""
 
-#: file.c:385
+#: src/file.c:408
+#, c-format
 msgid "Removing intermediate files...\n"
 msgstr "Sletter mellemfiler ...\n"
 
-#: file.c:781
+#: src/file.c:822
 #, c-format
-msgid "%s: Timestamp out of range; substituting %s"
-msgstr "%s: Tidsstempel i forkert omrÂde; bruger %s"
+msgid "%s cannot be both .NOTINTERMEDIATE and .INTERMEDIATE"
+msgstr "%s kan ikke v√¶re b√•de .NOTINTERMEDIATE og .INTERMEDIATE"
 
-#: file.c:782
+#: src/file.c:837
+#, c-format
+msgid "%s cannot be both .NOTINTERMEDIATE and .SECONDARY"
+msgstr "%s kan ikke v√¶re b√•de .NOTINTERMEDIATE og .SECONDARY"
+
+#: src/file.c:847
+#, c-format
+msgid ".NOTINTERMEDIATE and .SECONDARY are mutually exclusive"
+msgstr ".NOTINTERMEDIATE og .SECONDARY udelukker hinanden"
+
+#: src/file.c:939
 msgid "Current time"
 msgstr "Aktuel tid"
 
-#: file.c:881
-msgid "# Not a target:"
-msgstr "# Ikke et mÂl:"
-
-#: file.c:903
-msgid "#  Precious file (prerequisite of .PRECIOUS)."
-msgstr "#  VÊrdifuld fil (forudsÊtning for .PRECIOUS)."
-
-#: file.c:905
-msgid "#  Phony target (prerequisite of .PHONY)."
-msgstr "#  Falsk mÂl (forudsÊtning for .PHONY)."
-
-#: file.c:907
-msgid "#  Command-line target."
-msgstr "#  KommandolinjemÂl."
-
-#: file.c:909
-#, fuzzy
-msgid "#  A default, MAKEFILES, or -include/sinclude makefile."
-msgstr "#  En uangivet makefil, evt. en fra MAKEFILES."
-
-#: file.c:911
-msgid "#  Implicit rule search has been done."
-msgstr "#  Der er udf¯rt implicit regels¯gning."
-
-#: file.c:912
-msgid "#  Implicit rule search has not been done."
-msgstr "#  Der er ikke udf¯rt implicit regels¯gning."
-
-#: file.c:914
+#: src/file.c:943
 #, c-format
-msgid "#  Implicit/static pattern stem: `%s'\n"
-msgstr "#  Implicit/statisk m¯nsterstamme: '%s'\n"
+msgid "%s: Timestamp out of range; substituting %s"
+msgstr "%s: Tidsstempel i forkert omr√•de; bruger %s"
 
-#: file.c:916
+#: src/file.c:1086
+msgid "# Not a target:"
+msgstr "# Ikke et m√•l:"
+
+#: src/file.c:1091
+msgid "#  Precious file (prerequisite of .PRECIOUS)."
+msgstr "#  V√¶rdifuld fil (foruds√¶tning for .PRECIOUS)."
+
+#: src/file.c:1093
+msgid "#  Phony target (prerequisite of .PHONY)."
+msgstr "#  Falsk m√•l (foruds√¶tning for .PHONY)."
+
+#: src/file.c:1095
+msgid "#  Command line target."
+msgstr "#  Kommandolinjem√•l."
+
+#: src/file.c:1097
+msgid "#  A default, MAKEFILES, or -include/sinclude makefile."
+msgstr "#  Et forvalg, MAKEFILES, eller -include/sinclude makefile."
+
+#: src/file.c:1099
+msgid "#  Builtin rule"
+msgstr "#  Indbygget regel"
+
+#: src/file.c:1101
+msgid "#  Implicit rule search has been done."
+msgstr "#  Der er udf√∏rt implicit regels√∏gning."
+
+#: src/file.c:1102
+msgid "#  Implicit rule search has not been done."
+msgstr "#  Der er ikke udf√∏rt implicit regels√∏gning."
+
+#: src/file.c:1104
+#, c-format
+msgid "#  Implicit/static pattern stem: '%s'\n"
+msgstr "#  Implicit/statisk m√∏nsterstamme: \"%s\"\n"
+
+#: src/file.c:1106
 msgid "#  File is an intermediate prerequisite."
 msgstr "#  Filen er en mellemfil."
 
-#: file.c:919
+#: src/file.c:1108
+msgid "#  File is a prerequisite of .NOTINTERMEDIATE."
+msgstr "#  Filen er en foruds√¶tning for .NOTINTERMEDIATE."
+
+#: src/file.c:1110
+msgid "#  File is secondary (prerequisite of .SECONDARY)."
+msgstr "#  Filen er sekund√¶r (foruds√¶tning for .SECONDARY)."
+
+#: src/file.c:1114
 msgid "#  Also makes:"
-msgstr "#  Skaber ogsÂ:"
+msgstr "#  Skaber ogs√•:"
 
-#: file.c:925
+#: src/file.c:1120
 msgid "#  Modification time never checked."
-msgstr "#  ∆ndringstid ikke tjekket."
+msgstr "#  √Ündringstid ikke tjekket."
 
-#: file.c:927
+#: src/file.c:1122
 msgid "#  File does not exist."
 msgstr "#  Filen findes ikke."
 
-#: file.c:929
+#: src/file.c:1124
 msgid "#  File is very old."
 msgstr "#  Filen er meget gammel."
 
-#: file.c:934
+#: src/file.c:1129
 #, c-format
 msgid "#  Last modified %s\n"
-msgstr "#  Sidst Êndret %s\n"
+msgstr "#  Sidst √¶ndret %s\n"
 
-#: file.c:937
+#: src/file.c:1132
 msgid "#  File has been updated."
 msgstr "#  Filen er blevet opdateret."
 
-#: file.c:937
+#: src/file.c:1132
 msgid "#  File has not been updated."
 msgstr "#  Filen er ikke blevet opdateret."
 
-#: file.c:941
-msgid "#  Commands currently running (THIS IS A BUG)."
-msgstr "#  Kommandoer udf¯res nu (DETTE ER EN FEJL)."
+#: src/file.c:1136
+msgid "#  Recipe currently running (THIS IS A BUG)."
+msgstr "#  Der k√∏res kommandoer nu (DETTE ER EN FEJL)."
 
-#: file.c:944
-msgid "#  Dependencies commands running (THIS IS A BUG)."
-msgstr "#  Kommandoer for afhÊngigheder udf¯res nu (DETTE ER EN FEJL)."
+#: src/file.c:1139
+msgid "#  Dependencies recipe running (THIS IS A BUG)."
+msgstr "#  Kommandoer for afh√¶ngigheder k√∏res nu (DETTE ER EN FEJL)."
 
-#: file.c:953
+#: src/file.c:1148
 msgid "#  Successfully updated."
 msgstr "#  Opdateret med godt resultat."
 
-#: file.c:957
+#: src/file.c:1152
 msgid "#  Needs to be updated (-q is set)."
-msgstr "#  Beh¯ver opdatering (-q er sat)."
+msgstr "#  Beh√∏ver opdatering (-q er sat)."
 
-#: file.c:960
+#: src/file.c:1155
 msgid "#  Failed to be updated."
 msgstr "#  Opdatering mislykkedes."
 
-#: file.c:963
-msgid "#  Invalid value in `update_status' member!"
-msgstr "#  Ugyldig vÊrdi i 'update_status'-felt!"
+#: src/file.c:1160
+msgid "#  Invalid value in 'command_state' member!"
+msgstr "#  Ugyldig v√¶rdi i \"command_state\"-felt!"
 
-#: file.c:970
-msgid "#  Invalid value in `command_state' member!"
-msgstr "#  Ugyldig vÊrdi i 'command_state'-felt!"
-
-#: file.c:989
+#: src/file.c:1179
 msgid ""
 "\n"
 "# Files"
@@ -342,7 +398,7 @@ msgstr ""
 "\n"
 "# Filer"
 
-#: file.c:993
+#: src/file.c:1183
 msgid ""
 "\n"
 "# files hash-table stats:\n"
@@ -352,709 +408,834 @@ msgstr ""
 "# Statistik for fil-hash-spande:\n"
 "# "
 
-#: function.c:759
-msgid "non-numeric first argument to `word' function"
-msgstr "ikke-numerisk f¯rste argument til 'word'-funktionen"
+#: src/file.c:1193
+#, c-format
+msgid "%s: Field '%s' not cached: %s"
+msgstr "%s: Feltet \"%s\" er ikke i cache: %s"
 
-#: function.c:764
-msgid "first argument to `word' function must be greater than 0"
-msgstr "f¯rste argument til 'word'-functionen skal vÊre st¯rre end 0"
+#: src/function.c:779 src/function.c:1284
+#, c-format
+msgid "%s: empty value"
+msgstr "%s: tom v√¶rdi"
 
-#: function.c:785
-msgid "non-numeric first argument to `wordlist' function"
-msgstr "ikke-numerisk f¯rste argument til 'wordlist'-funktionen"
+#: src/function.c:784
+#, c-format
+msgid "%s: '%s' out of range"
+msgstr "%s: \"%s\" uden for gyldigt interval"
 
-#: function.c:787
-msgid "non-numeric second argument to `wordlist' function"
-msgstr "ikke-numerisk andet argument til 'wordlist'-funktionen"
+#: src/function.c:800
+msgid "invalid first argument to 'word' function"
+msgstr "ugyldigt f√∏rste argument til \"word\"-funktionen"
 
-#: function.c:1453
-#, fuzzy, c-format
-msgid "create_child_process: DuplicateHandle(In) failed (e=%ld)\n"
-msgstr "create_child_process: DuplicateHandle(In) mislykkedes (e=%d)\n"
+#: src/function.c:803
+#, c-format
+msgid "first argument to 'word' function must be greater than 0"
+msgstr "f√∏rste argument til \"word\"-funktionen skal v√¶re st√∏rre end 0"
 
-#: function.c:1464
-#, fuzzy, c-format
-msgid "create_child_process: DuplicateHandle(Err) failed (e=%ld)\n"
-msgstr "create_child_process: DuplicateHandle(Err) mislykkedes (e=%d)\n"
+#: src/function.c:821
+msgid "invalid first argument to 'wordlist' function"
+msgstr "ugyldigt f√∏rste argument til \"wordlist\"-funktionen"
 
-#: function.c:1469
-#, fuzzy, c-format
-msgid "CreatePipe() failed (e=%ld)\n"
-msgstr "CreatePipe() mislykkedes (e=%d)\n"
+#: src/function.c:822
+msgid "invalid second argument to 'wordlist' function"
+msgstr "ugyldigt andet argument til \"wordlist\"-funktionen"
 
-#: function.c:1474
-msgid "windows32_openpipe (): process_init_fd() failed\n"
+#: src/function.c:1328
+msgid "non-numeric first argument to 'intcmp' function"
+msgstr "ikke-numerisk f√∏rste argument til \"intcmp\"-funktionen"
+
+#: src/function.c:1329
+msgid "non-numeric second argument to 'intcmp' function"
+msgstr "ikke-numerisk andet argument til \"intcmp\"-funktionen"
+
+#: src/function.c:1684
+#, c-format
+msgid "windows32_openpipe: DuplicateHandle(In) failed (e=%lu)\n"
+msgstr "windows32_openpipe: DuplicateHandle(In) mislykkedes (e=%lu)\n"
+
+#: src/function.c:1708
+#, c-format
+msgid "windows32_openpipe: DuplicateHandle(Err) failed (e=%lu)\n"
+msgstr "windows32_openpipe: DuplicateHandle(Err) mislykkedes (e=%lu)\n"
+
+#: src/function.c:1715
+#, c-format
+msgid "CreatePipe() failed (e=%lu)\n"
+msgstr "CreatePipe() mislykkedes (e=%lu)\n"
+
+#: src/function.c:1723
+#, c-format
+msgid "windows32_openpipe(): process_init_fd() failed\n"
 msgstr "windows32_openpipe(): process_init_fd() mislykkedes\n"
 
-#: function.c:1725
+#: src/function.c:1983
 #, c-format
 msgid "Cleaning up temporary batch file %s\n"
 msgstr "Afrydder midlertidig batchfil %s\n"
 
-#: function.c:2101
+#: src/function.c:2348 src/function.c:2388
+#, c-format
+msgid "file: missing filename"
+msgstr "fil: mangler filnavn"
+
+#: src/function.c:2358 src/function.c:2408
+#, c-format
+msgid "open: %s: %s"
+msgstr "√•bn: %s: %s"
+
+#: src/function.c:2371
+#, c-format
+msgid "write: %s: %s"
+msgstr "skriv: %s: %s"
+
+#: src/function.c:2374 src/function.c:2427
+#, c-format
+msgid "close: %s: %s"
+msgstr "luk: %s: %s"
+
+#: src/function.c:2391
+#, c-format
+msgid "file: too many arguments"
+msgstr "fil: for mange argumenter"
+
+#: src/function.c:2404
 #, fuzzy, c-format
-msgid "insufficient number of arguments (%d) to function `%s'"
-msgstr "UtilstrÊkkeligt antal argumenter (%d) til funktionen '%s'"
+msgid "file: Failed to open '%s': %s\n"
+msgstr "fil: ugyldig filoperation: %s"
 
-#: function.c:2113
-#, fuzzy, c-format
-msgid "unimplemented on this platform: function `%s'"
-msgstr "Uimplementeret pÂ denne platform: funktion '%s'"
-
-#: function.c:2163
+#: src/function.c:2422
 #, c-format
-msgid "unterminated call to function `%s': missing `%c'"
-msgstr "Uafsluttet kald til funktionen '%s'; manglende '%c'"
+msgid "read: %s: %s"
+msgstr "l√¶s: %s: %s"
 
-#: getopt.c:663
+#: src/function.c:2434
 #, c-format
-msgid "%s: option `%s' is ambiguous\n"
-msgstr "%s: tilvalg '%s' er flertydigt\n"
+msgid "file: invalid file operation: %s"
+msgstr "fil: ugyldig filoperation: %s"
 
-#: getopt.c:687
+#: src/function.c:2552
 #, c-format
-msgid "%s: option `--%s' doesn't allow an argument\n"
-msgstr "%s: tilvalg '--%s' tillader ikke et argument\n"
+msgid "insufficient number of arguments (%u) to function '%s'"
+msgstr "utilstr√¶kkeligt antal argumenter (%u) til funktionen \"%s\""
 
-#: getopt.c:692
+#: src/function.c:2564
 #, c-format
-msgid "%s: option `%c%s' doesn't allow an argument\n"
-msgstr "%s: tilvalg '%c%s' tillader ikke et argument\n"
+msgid "unimplemented on this platform: function '%s'"
+msgstr "ikke implementeret p√• denne platform: funktionen \"%s\""
 
-#: getopt.c:709 getopt.c:882
+#: src/function.c:2633
 #, c-format
-msgid "%s: option `%s' requires an argument\n"
-msgstr "%s tilvalg '%s' krÊver et argument\n"
+msgid "unterminated call to function '%s': missing '%c'"
+msgstr "uafsluttet kald til funktionen \"%s\"; manglende \"%c\""
 
-#: getopt.c:738
+#: src/function.c:2816
 #, c-format
-msgid "%s: unrecognized option `--%s'\n"
-msgstr "%s: ikke genkendt tilvalg '--%s'\n"
+msgid "Empty function name"
+msgstr "Tomt funktionsnavn"
 
-#: getopt.c:742
+#: src/function.c:2818
 #, c-format
-msgid "%s: unrecognized option `%c%s'\n"
-msgstr "%s: ikke genkendt tilvalg '%c%s'\n"
+msgid "Invalid function name: %s"
+msgstr "Ugyldigt funktionsnavn: %s"
 
-#: getopt.c:768
+#: src/function.c:2820
+#, c-format
+msgid "Function name too long: %s"
+msgstr "Funktionsnavn er for langt: %s"
+
+#: src/function.c:2823
+#, c-format
+msgid "Invalid minimum argument count (%u) for function %s"
+msgstr "utilstr√¶kkeligt antal argumenter (%u) til funktionen \"%s\""
+
+#: src/function.c:2826
+#, c-format
+msgid "Invalid maximum argument count (%u) for function %s"
+msgstr "Utilstr√¶kkeligt antal argumenter (%u) til funktionen \"%s\""
+
+#: src/getopt.c:663
+#, c-format
+msgid "%s: option '%s' is ambiguous\n"
+msgstr "%s: tilvalget \"%s\" er flertydigt\n"
+
+#: src/getopt.c:688
+#, c-format
+msgid "%s: option '--%s' doesn't allow an argument\n"
+msgstr "%s: tilvalget \"--%s\" tillader ikke et argument\n"
+
+#: src/getopt.c:693
+#, c-format
+msgid "%s: option '%c%s' doesn't allow an argument\n"
+msgstr "%s: tilvalget \"%c%s\" tillader ikke et argument\n"
+
+#: src/getopt.c:710 src/getopt.c:883
+#, c-format
+msgid "%s: option '%s' requires an argument\n"
+msgstr "%s tilvalget \"%s\" kr√¶ver et argument\n"
+
+#: src/getopt.c:739
+#, c-format
+msgid "%s: unrecognized option '--%s'\n"
+msgstr "%s: ukendt tilvalg \"--%s\"\n"
+
+#: src/getopt.c:743
+#, c-format
+msgid "%s: unrecognized option '%c%s'\n"
+msgstr "%s: ukendt tilvalg \"%c%s\"\n"
+
+#: src/getopt.c:769
 #, c-format
 msgid "%s: illegal option -- %c\n"
 msgstr "%s: ulovligt tilvalg -- %c\n"
 
-#: getopt.c:771
+#: src/getopt.c:772
 #, c-format
 msgid "%s: invalid option -- %c\n"
 msgstr "%s: ugyldigt tilvalg -- %c\n"
 
-#: getopt.c:801 getopt.c:931
+#: src/getopt.c:802 src/getopt.c:932
 #, c-format
 msgid "%s: option requires an argument -- %c\n"
-msgstr "%s: tilvalg krÊver et argument -- %c\n"
+msgstr "%s: tilvalg kr√¶ver et argument -- %c\n"
 
-#: getopt.c:848
+#: src/getopt.c:849
 #, c-format
-msgid "%s: option `-W %s' is ambiguous\n"
-msgstr "%s: tilvalg '-W %s' er flertydigt\n"
+msgid "%s: option '-W %s' is ambiguous\n"
+msgstr "%s: tilvalget \"-W %s\" er flertydigt\n"
 
-#: getopt.c:866
+#: src/getopt.c:867
 #, c-format
-msgid "%s: option `-W %s' doesn't allow an argument\n"
-msgstr "%s: tilvalg '-W %s' tillader ikke et argument\n"
+msgid "%s: option '-W %s' doesn't allow an argument\n"
+msgstr "%s: tilvalget \"-W %s\" tillader ikke et argument\n"
 
-#: hash.c:51
+# expand er normalt at skrive noget ud frem for at forkorte det.  F.eks. %s -> "hello"
+#: src/guile.c:58
 #, c-format
-msgid "can't allocate %ld bytes for hash table: memory exhausted"
-msgstr "kan ikke tildele %ld byte til hash-spande: hukommelsen opbrugt"
+msgid "guile: Expanding '%s'\n"
+msgstr "guile: Udskriver \"%s\"\n"
 
-#: hash.c:282
+#: src/guile.c:74
 #, c-format
-msgid "Load=%ld/%ld=%.0f%%, "
-msgstr "Fyldning=%ld/%ld=%.0f%%, "
+msgid "guile: Evaluating '%s'\n"
+msgstr "guile: Evaluerer \"%s\"\n"
 
-#: hash.c:284
+#: src/hash.c:50
 #, c-format
-msgid "Rehash=%d, "
-msgstr "Omgrupperinger=%d, "
+msgid "can't allocate %lu bytes for hash table: memory exhausted"
+msgstr "kan ikke tildele %lu byte til hashtabel: hukommelsen opbrugt"
 
-#: hash.c:285
+#: src/hash.c:280
 #, c-format
-msgid "Collisions=%ld/%ld=%.0f%%"
-msgstr "Sammenst¯d=%ld/%ld=%.0f%%"
+msgid "Load=%lu/%lu=%.0f%%, "
+msgstr "Fyldning=%lu/%lu=%.0f %%, "
 
-#: implicit.c:41
+#: src/hash.c:282
 #, c-format
-msgid "Looking for an implicit rule for `%s'.\n"
-msgstr "Kigger efter en implicit regel for '%s'.\n"
+msgid "Rehash=%u, "
+msgstr "Omgrupperinger=%u, "
 
-#: implicit.c:57
+#: src/hash.c:283
 #, c-format
-msgid "Looking for archive-member implicit rule for `%s'.\n"
-msgstr "Kigger efter en implicit arkivmedlemsregel for '%s'.\n"
+msgid "Collisions=%lu/%lu=%.0f%%"
+msgstr "Sammenst√∏d=%lu/%lu=%.0f %%"
 
-#: implicit.c:319
-msgid "Avoiding implicit rule recursion.\n"
-msgstr "UndgÂr rekursion i implicitte regler.\n"
-
-#: implicit.c:476
+#: src/implicit.c:41
 #, c-format
-msgid "Trying pattern rule with stem `%.*s'.\n"
-msgstr "Pr¯ver m¯nsterregel med stammen '%.*s'.\n"
+msgid "Looking for an implicit rule for '%s'.\n"
+msgstr "Kigger efter en implicit regel for \"%s\".\n"
 
-#: implicit.c:667
+#: src/implicit.c:57
 #, c-format
-msgid "Rejecting impossible implicit prerequisite `%s'.\n"
-msgstr "Afviser umulig implicit forudsÊtning '%s'.\n"
+msgid "Looking for archive-member implicit rule for '%s'.\n"
+msgstr "Kigger efter en implicit regel for arkivelementer for \"%s\".\n"
 
-#: implicit.c:668
+#: src/implicit.c:61
 #, c-format
-msgid "Rejecting impossible rule prerequisite `%s'.\n"
-msgstr "Afviser umulig regelforudsÊtning '%s'.\n"
+msgid "No archive-member implicit rule found for '%s'.\n"
+msgstr "Ingen implicit regel for arkivelementer for \"%s\".\n"
 
-#: implicit.c:678
+#: src/implicit.c:328
 #, c-format
-msgid "Trying implicit prerequisite `%s'.\n"
-msgstr "Pr¯ver implicit forudsÊtning '%s'.\n"
+msgid "Avoiding implicit rule recursion for rule '%s'.\n"
+msgstr "Undg√•r rekursion i implicitte regler for reglen \"%s\".\n"
 
-#: implicit.c:679
+#: src/implicit.c:453
 #, c-format
-msgid "Trying rule prerequisite `%s'.\n"
-msgstr "Pr¯ver regelforudsÊtning '%s'.\n"
+msgid "Trying harder.\n"
+msgstr "Pr√∏ver ivrigere.\n"
 
-#: implicit.c:710
+#: src/implicit.c:503
 #, c-format
-msgid "Found prerequisite `%s' as VPATH `%s'\n"
-msgstr "Fandt forudsÊtning '%s' som VPATH '%s'\n"
+msgid "Trying pattern rule '%s' with stem '%.*s'.\n"
+msgstr "Pr√∏ver m√∏nsterreglen \"%s\" med stammen \"%.*s\".\n"
 
-#: implicit.c:730
+#: src/implicit.c:508
 #, c-format
-msgid "Looking for a rule with intermediate file `%s'.\n"
-msgstr "Kigger efter en regel med mellemfil '%s'.\n"
+msgid "Stem too long: '%s%.*s'.\n"
+msgstr "Stamme for lang: \"%s%.*s\".\n"
 
-#: job.c:321
-#, fuzzy
-msgid "Cannot create a temporary file\n"
-msgstr "fwrite (midlertidig fil)"
-
-#: job.c:388
+#: src/implicit.c:770
 #, c-format
-msgid "*** [%s] Error 0x%x (ignored)"
-msgstr "*** [%s] Fejl 0x%x (ignoreret)"
+msgid "Rejecting rule '%s' due to impossible rule prerequisite '%s'.\n"
+msgstr "Afviser reglen \"%s\" p√• grund af umulig regelforuds√¶tning \"%s\".\n"
 
-#: job.c:389
+#: src/implicit.c:772
 #, c-format
-msgid "*** [%s] Error 0x%x"
-msgstr "*** [%s] Fejl 0x%x"
+msgid "Rejecting rule '%s' due to impossible implicit prerequisite '%s'.\n"
+msgstr ""
+"Afviser reglen \"%s\" p√• grund af umulig implicit foruds√¶tning \"%s\".\n"
 
-#: job.c:393
+#: src/implicit.c:789
 #, c-format
-msgid "[%s] Error %d (ignored)"
-msgstr "[%s] Fejl %d (ignoreret)"
+msgid "Trying rule prerequisite '%s'.\n"
+msgstr "Pr√∏ver regelforuds√¶tning \"%s\".\n"
 
-#: job.c:394
+#: src/implicit.c:790
 #, c-format
-msgid "*** [%s] Error %d"
-msgstr "*** [%s] Fejl %d"
+msgid "Trying implicit prerequisite '%s'.\n"
+msgstr "Pr√∏ver implicit foruds√¶tning \"%s\".\n"
 
-#: job.c:399
+#: src/implicit.c:829
+#, c-format
+msgid "'%s' ought to exist.\n"
+msgstr "\"%s\" b√∏r findes.\n"
+
+#: src/implicit.c:836
+#, c-format
+msgid "Found '%s'.\n"
+msgstr "Fandt \"%s\".\n"
+
+#: src/implicit.c:844
+#, c-format
+msgid "Using compatibility rule '%s' due to '%s'.\n"
+msgstr "Bruger kompatibilitetsreglen \"%s\" p√• grund af \"%s\".\n"
+
+#: src/implicit.c:858
+#, c-format
+msgid "Prerequisite '%s' of rule '%s' does not qualify as ought to exist.\n"
+msgstr ""
+"Foruds√¶tningen \"%s\" for reglen \"%s\" t√¶ller ikke som √©n, der b√∏r findes.\n"
+
+#: src/implicit.c:872
+#, c-format
+msgid "Found prerequisite '%s' as VPATH '%s'.\n"
+msgstr "Fandt foruds√¶tning \"%s\" som VPATH \"%s\".\n"
+
+#: src/implicit.c:887
+#, c-format
+msgid "Looking for a rule with explicit file '%s'.\n"
+msgstr "Kigger efter en regel med eksplicit fil \"%s\".\n"
+
+#: src/implicit.c:888
+#, c-format
+msgid "Looking for a rule with intermediate file '%s'.\n"
+msgstr "Kigger efter en regel med mellemfil \"%s\".\n"
+
+#: src/implicit.c:929
+#, c-format
+msgid "Rejecting rule '%s' due to impossible prerequisite '%s'.\n"
+msgstr "Afviser reglen \"%s\" p√• grund af umulig foruds√¶tning \"%s\".\n"
+
+#: src/implicit.c:933
+#, c-format
+msgid "Not found '%s'.\n"
+msgstr "Fandt ikke \"%s\".\n"
+
+#: src/implicit.c:1148
+#, c-format
+msgid "Found implicit rule '%s' for '%s'.\n"
+msgstr "Fandt en implicit regel \"%s\" for \"%s\".\n"
+
+#: src/implicit.c:1155
+#, c-format
+msgid "Searching for a compatibility rule for '%s'.\n"
+msgstr "Kigger efter en kompatibilitetsregel for \"%s\".\n"
+
+#: src/implicit.c:1161
+#, c-format
+msgid "No implicit rule found for '%s'.\n"
+msgstr "Ingen implicit regel for \"%s\" fundet.\n"
+
+#: src/job.c:377
+msgid "Cannot create a temporary file"
+msgstr "Kan ikke oprette en midlertidig fil"
+
+#: src/job.c:549
 msgid " (core dumped)"
 msgstr " (core-fil efterladt)"
 
-#: job.c:488
-msgid "*** Waiting for unfinished jobs...."
-msgstr "*** Venter pÂ uafsluttede job...."
+#: src/job.c:554
+msgid " (ignored)"
+msgstr "(ignoreret)"
 
-#: job.c:518
+#: src/job.c:558 src/job.c:1903
+msgid "<builtin>"
+msgstr "<indbygget>"
+
+#: src/job.c:584
 #, c-format
-msgid "Live child 0x%08lx (%s) PID %ld %s\n"
-msgstr "Levende barn 0x%08lx (%s), PID %ld %s\n"
+msgid "%s[%s: %s] Error %d%s%s"
+msgstr "%s[%s: %s] Fejl %d%s%s"
 
-#: job.c:520 job.c:701 job.c:804 job.c:1457
+#: src/job.c:674
+#, c-format
+msgid "*** Waiting for unfinished jobs...."
+msgstr "*** Venter p√• uafsluttede job...."
+
+#: src/job.c:716
+#, c-format
+msgid "Live child %p (%s) PID %s %s\n"
+msgstr "Levende underproces %p (%s) PID %s %s\n"
+
+#: src/job.c:718 src/job.c:913 src/job.c:1081 src/job.c:1656
+#, c-format
 msgid " (remote)"
 msgstr " (eksternt)"
 
-#: job.c:698
+#: src/job.c:911
 #, c-format
-msgid "Reaping losing child 0x%08lx PID %ld %s\n"
-msgstr "H¯ster taberbarn 0x%08lx, PID %ld %s\n"
+msgid "Reaping winning child %p PID %s %s\n"
+msgstr "H√∏ster vindende underproces %p PID %s %s\n"
 
-#: job.c:699
+#: src/job.c:912
 #, c-format
-msgid "Reaping winning child 0x%08lx PID %ld %s\n"
-msgstr "H¯ster vinderbarn 0x%08lx, PID %ld %s\n"
+msgid "Reaping losing child %p PID %s %s\n"
+msgstr "H√∏ster tabende underproces %p PID %s %s\n"
 
-#: job.c:704
+#: src/job.c:963
 #, c-format
 msgid "Cleaning up temp batch file %s\n"
-msgstr "Afrydder midlertidig jobfil %s\n"
+msgstr "Rydder midlertidig batchfil %s\n"
 
-#: job.c:802
+#: src/job.c:969
 #, c-format
-msgid "Removing child 0x%08lx PID %ld%s from chain.\n"
-msgstr "Fjerner barn 0x%08lx, PID %ld%s fra kÊde.\n"
+msgid "Cleaning up temp batch file %s failed (%d)\n"
+msgstr "Oprydning af midlertidig batchfil %s mislykkedes (%d)\n"
 
-#: job.c:862
-msgid "write jobserver"
-msgstr "write jobserver"
-
-#: job.c:864
+#: src/job.c:1080
 #, c-format
-msgid "Released token for child 0x%08lx (%s).\n"
-msgstr "Frigav symbol for barn 0x%08lx (%s).\n"
+msgid "Removing child %p PID %s%s from chain.\n"
+msgstr "Fjerner underproces %p PID %s%s fra k√¶de.\n"
 
-#: job.c:1383
-#, fuzzy, c-format
+#: src/job.c:1143
+#, c-format
+msgid "Released token for child %p (%s).\n"
+msgstr "Frigav symbol for underproces %p (%s).\n"
+
+#: src/job.c:1587 src/job.c:2540
+#, c-format
 msgid "process_easy() failed to launch process (e=%ld)\n"
-msgstr "process_easy() fejlede ved igangsÊtning af proces (e=%d)\n"
+msgstr "process_easy() fejlede ved igangs√¶tning af proces (e=%ld)\n"
 
-#: job.c:1387 job.c:2020
+#: src/job.c:1591 src/job.c:2544
 #, c-format
 msgid ""
 "\n"
 "Counted %d args in failed launch\n"
 msgstr ""
 "\n"
-"Talte %d argumenter i fejlet igangsÊtning\n"
+"Talte %d argumenter i fejlet igangs√¶tning\n"
 
-#: job.c:1455
+#: src/job.c:1654
 #, c-format
-msgid "Putting child 0x%08lx (%s) PID %ld%s on the chain.\n"
-msgstr "SÊtter barn 0x%08lx (%s), PID %ld%s i kÊden.\n"
+msgid "Putting child %p (%s) PID %s%s on the chain.\n"
+msgstr "S√¶tter underproces %p (%s) PID %s%s p√• k√¶den.\n"
 
-#: job.c:1709
+#: src/job.c:1887
 #, c-format
-msgid "Obtained token for child 0x%08lx (%s).\n"
-msgstr "Fik symbol for barn 0x%08lx (%s).\n"
+msgid "Obtained token for child %p (%s).\n"
+msgstr "Fik symbol for underproces %p (%s).\n"
 
-#: job.c:1718
-msgid "read jobs pipe"
-msgstr "read jobs pipe"
+#: src/job.c:1912
+#, fuzzy, c-format
+msgid "%s: update target '%s' due to: target is .PHONY"
+msgstr "%s: opdat√©r m√•let \"%s\" p√• grund af: %s"
 
-#: job.c:1832
+#: src/job.c:1916
+#, fuzzy, c-format
+msgid "%s: update target '%s' due to: target does not exist"
+msgstr "%s: opdat√©r m√•let \"%s\" p√• grund af: %s"
+
+#: src/job.c:1923 src/job.c:1951
+#, c-format
+msgid "%s: update target '%s' due to: %s"
+msgstr "%s: opdat√©r m√•let \"%s\" p√• grund af: %s"
+
+#: src/job.c:1939
+#, fuzzy, c-format
+msgid "%s: update target '%s' due to: unknown reasons"
+msgstr "%s: opdat√©r m√•let \"%s\" p√• grund af: %s"
+
+#: src/job.c:2147
+#, c-format
 msgid "cannot enforce load limits on this operating system"
-msgstr "kan ikke gennemtvinge belastningsgrÊnser pÂ dette styrestystem"
+msgstr "kan ikke gennemtvinge belastningsgr√¶nser p√• dette styrestystem"
 
-#: job.c:1834
+#: src/job.c:2149
 msgid "cannot enforce load limit: "
-msgstr "kan ikke gennemtvinge belastningsgrÊnse: "
+msgstr "kan ikke gennemtvinge belastningsgr√¶nse: "
 
-#: job.c:1907
-msgid "no more file handles: could not duplicate stdin\n"
-msgstr ""
-
-#: job.c:1909
-msgid "no more file handles: could not duplicate stdout\n"
-msgstr ""
-
-#: job.c:1937
-msgid "Could not restore stdin\n"
-msgstr ""
-
-#: job.c:1945
-msgid "Could not restore stdout\n"
-msgstr ""
-
-#: job.c:2016
-#, fuzzy, c-format
-msgid "process_easy() failed failed to launch process (e=%ld)\n"
-msgstr "process_easy() fejlede ved igangsÊtning af proces (e=%d)\n"
-
-#: job.c:2046
-#, fuzzy, c-format
-msgid "make reaped child pid %ld, still waiting for pid %ld\n"
-msgstr "make h¯stede b¯rne-pid %d, venter endnu pÂ pid %d\n"
-
-#: job.c:2085
+#: src/job.c:2238
 #, c-format
-msgid "%s: Command not found"
-msgstr "%s: Kommando ikke fundet"
+msgid "no more file handles: could not duplicate stdin"
+msgstr "ikke flere filh√•ndtag: Kunne ikke duplikere stdin"
 
-#: job.c:2145
+#: src/job.c:2250
 #, c-format
-msgid "%s: Shell program not found"
-msgstr "%s; Skalprogram ikke fundet"
+msgid "no more file handles: could not duplicate stdout"
+msgstr "ikke flere filh√•ndtag: Kunne ikke duplikere stdout"
 
-#: job.c:2154
+#: src/job.c:2264
+#, c-format
+msgid "no more file handles: could not duplicate stderr"
+msgstr "ikke flere filh√•ndtag: kunne ikke duplikere stderr"
+
+#: src/job.c:2279
+#, c-format
+msgid "Could not restore stdin"
+msgstr "Kunne ikke gendanne stdin"
+
+#: src/job.c:2287
+#, c-format
+msgid "Could not restore stdout"
+msgstr "Kunne ikke gendanne stdout"
+
+#: src/job.c:2295
+#, c-format
+msgid "Could not restore stderr"
+msgstr "Kunne ikke gendanne stderr"
+
+#: src/job.c:2573
+#, c-format
+msgid "make reaped child pid %s, still waiting for pid %s\n"
+msgstr "make h√∏stede underproces med pid %s, venter endnu p√• pid %s\n"
+
+#: src/job.c:2681
+#, c-format
 msgid "spawnvpe: environment space might be exhausted"
-msgstr ""
+msgstr "spawnvpe: milj√∏plads er m√•ske opbrugt"
 
-#: job.c:2363
-#, fuzzy, c-format
-msgid "$SHELL changed (was `%s', now `%s')\n"
-msgstr "$SHELL Êndret (var '%s', nu '%s')"
+#: src/job.c:2920
+#, c-format
+msgid "$SHELL changed (was '%s', now '%s')\n"
+msgstr "$SHELL √¶ndret (var \"%s\", nu \"%s\")\n"
 
-#: job.c:2789
+#: src/job.c:3363 src/job.c:3567
 #, c-format
 msgid "Creating temporary batch file %s\n"
-msgstr "Opretter midlertidig jobfil %s\n"
+msgstr "Opretter midlertidig batchfil %s\n"
 
-#: job.c:2902
+#: src/job.c:3371
+#, c-format
+msgid ""
+"Batch file contents:\n"
+"\t@echo off\n"
+msgstr ""
+"Indhold af batchfil:\n"
+"\t@echo off\n"
+
+#: src/job.c:3579
+#, c-format
+msgid ""
+"Batch file contents:%s\n"
+"\t%s\n"
+msgstr ""
+"Indhold af batchfil:%s\n"
+"\t%s\n"
+
+#: src/job.c:3687
 #, c-format
 msgid "%s (line %d) Bad shell context (!unixy && !batch_mode_shell)\n"
 msgstr "%s (linje %d) Forkert skal-kontekst (!unixy && !batch_mode_shell)\n"
 
-#: main.c:291
+#: src/load.c:60
+#, c-format
+msgid "Failed to open global symbol table: %s"
+msgstr "Kunne ikke √•bne global symboltabel: %s"
+
+#: src/load.c:93
+#, c-format
+msgid "Loaded shared object %s\n"
+msgstr "Indl√¶ste delt objekt %s\n"
+
+#: src/load.c:99
+#, c-format
+msgid "Loaded object %s is not declared to be GPL compatible"
+msgstr "Det indl√¶ste objekt %s er ikke erkl√¶ret som GPL-kompatibelt"
+
+#: src/load.c:106
+#, c-format
+msgid "Failed to load symbol %s from %s: %s"
+msgstr "Kunne ikke indl√¶se symbolet %s fra %s: %s"
+
+#: src/load.c:151
+#, c-format
+msgid "Empty symbol name for load: %s"
+msgstr "Tomt symbolnavn ved indl√¶sning: %s"
+
+#: src/load.c:206
+#, c-format
+msgid "Loading symbol %s from %s\n"
+msgstr "Indl√¶ser symbol %s fra %s\n"
+
+#: src/load.c:232
+#, c-format
+msgid "Unloading shared object %s\n"
+msgstr "Afindl√¶ser delt objekt %s\n"
+
+#: src/load.c:251
+#, c-format
+msgid "The 'load' operation is not supported on this platform"
+msgstr "Operationen indl√¶s (\"load\") underst√∏ttes ikke p√• denne platform"
+
+#: src/main.c:320
 msgid "Options:\n"
 msgstr "Tilvalg:\n"
 
-#: main.c:292
+#: src/main.c:321
 msgid "  -b, -m                      Ignored for compatibility.\n"
 msgstr "  -b, -m                      Ignoreret af hensyn til kompabilitet.\n"
 
-#: main.c:294
+#: src/main.c:323
 msgid "  -B, --always-make           Unconditionally make all targets.\n"
-msgstr "  -B, --always-make           Skab alle mÂl betingelsesl¯st.\n"
+msgstr "  -B, --always-make           Skab alle m√•l betingelsesl√∏st.\n"
 
-#: main.c:296
+#: src/main.c:325
 msgid ""
 "  -C DIRECTORY, --directory=DIRECTORY\n"
 "                              Change to DIRECTORY before doing anything.\n"
 msgstr ""
 "  -C KATALOG, --directory=KATALOG\n"
-"                              Skift allerf¯rst til KATALOG.\n"
+"                              Skift allerf√∏rst til KATALOG.\n"
 
-#: main.c:299
+#: src/main.c:328
 msgid "  -d                          Print lots of debugging information.\n"
 msgstr ""
-"  -d                          Udskriv en masse fejls¯gningsinformation.\n"
+"  -d                          Udskriv en masse fejls√∏gningsinformation.\n"
 
-#: main.c:301
+#: src/main.c:330
 msgid ""
 "  --debug[=FLAGS]             Print various types of debugging information.\n"
 msgstr ""
-"  --debug[=FLAG]              Udskriv forskellige slags "
-"fejls¯gningsinformation.\n"
+"  --debug[=FLAG]              Udskriv diverse fejls√∏gningsinformationer.\n"
 
-#: main.c:303
+#: src/main.c:332
 msgid ""
 "  -e, --environment-overrides\n"
 "                              Environment variables override makefiles.\n"
 msgstr ""
 "  -e, --environment-overrides\n"
-"                              Milj¯variable har forrang for makefiler.\n"
+"                              Milj√∏variable har forrang for makefiler.\n"
 
-#: main.c:306
+#: src/main.c:335
+msgid ""
+"  -E STRING, --eval=STRING    Evaluate STRING as a makefile statement.\n"
+msgstr ""
+"  -E STRENG, --eval=STRENG    Evalu√©r STRENG som en makefil-erkl√¶ring.\n"
+
+#: src/main.c:337
 msgid ""
 "  -f FILE, --file=FILE, --makefile=FILE\n"
 "                              Read FILE as a makefile.\n"
 msgstr ""
 "  -f FIL, --file=FIL, --makefile=FIL\n"
-"                              LÊs FIL som en makefil.\n"
+"                              L√¶s FIL som en makefil.\n"
 
-#: main.c:309
+#: src/main.c:340
 msgid "  -h, --help                  Print this message and exit.\n"
 msgstr "  -h, --help                  Udskriv denne besked og afslut.\n"
 
-#: main.c:311
-msgid "  -i, --ignore-errors         Ignore errors from commands.\n"
-msgstr "  -i, --ignore-errors         IgnorÈr fejl fra kommandoer.\n"
+#: src/main.c:342
+msgid "  -i, --ignore-errors         Ignore errors from recipes.\n"
+msgstr "  -i, --ignore-errors         Ignor√©r fejl fra kommandoer.\n"
 
-#: main.c:313
+#: src/main.c:344
 msgid ""
 "  -I DIRECTORY, --include-dir=DIRECTORY\n"
 "                              Search DIRECTORY for included makefiles.\n"
 msgstr ""
 "  -I KATALOG, --include-dir=KATALOG\n"
-"                              S¯g i KATALOG efter inkluderede makefiler.\n"
+"                              S√∏g i KATALOG efter inkluderede makefiler.\n"
 
-#: main.c:316
+#: src/main.c:347
 msgid ""
 "  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no "
 "arg.\n"
 msgstr ""
-"  -j [N], --jobs[=N]          Tillad N samtidige job; uendelig mange job "
-"uden argument.\n"
+"  -j [N], --jobs[=N]          Tillad N samtidige job;\n"
+"                              ubegr√¶nset antal hvis N ikke er givet.\n"
 
-#: main.c:318
+#: src/main.c:349
+msgid "  --jobserver-style=STYLE     Select the style of jobserver to use.\n"
+msgstr ""
+"  --jobserver-style=STIL      V√¶lg stilen af jobserver, der skal bruges.\n"
+
+#: src/main.c:351
 msgid ""
 "  -k, --keep-going            Keep going when some targets can't be made.\n"
 msgstr ""
-"  -k, --keep-going            FortsÊt selvom nogen mÂl ikke kan skabes.\n"
+"  -k, --keep-going            Forts√¶t selvom nogen m√•l ikke kan skabes.\n"
 
-#: main.c:320
+#: src/main.c:353
 msgid ""
 "  -l [N], --load-average[=N], --max-load[=N]\n"
 "                              Don't start multiple jobs unless load is below "
 "N.\n"
 msgstr ""
 "  -l [N], --load-average[=N], --max-load[=N]\n"
-"                              Start ikke flere job medmindre belastningen er "
-"under N.\n"
+"                              Start kun flere job hvis belastning er under "
+"N.\n"
 
-#: main.c:323
+#: src/main.c:356
 msgid ""
 "  -L, --check-symlink-times   Use the latest mtime between symlinks and "
 "target.\n"
 msgstr ""
+"  -L, --check-symlink-times   Brug sidste mtime mellem symbolske l√¶nker og "
+"m√•l.\n"
 
-#: main.c:325
+#: src/main.c:358
 msgid ""
 "  -n, --just-print, --dry-run, --recon\n"
-"                              Don't actually run any commands; just print "
+"                              Don't actually run any recipe; just print "
 "them.\n"
 msgstr ""
 "  -n, --just-print, --dry-run, --recon\n"
-"                              Udf¯r ikke nogen kommandoer; udskriv dem "
+"                              Udf√∏r ikke nogen kommandoer; udskriv dem "
 "bare.\n"
 
-#: main.c:328
+#: src/main.c:361
 msgid ""
 "  -o FILE, --old-file=FILE, --assume-old=FILE\n"
 "                              Consider FILE to be very old and don't remake "
 "it.\n"
 msgstr ""
 "  -o FIL, --old-file=FIL, --assume-old=FIL\n"
-"                              Anse FIL som vÊrende meget gammel og genskab "
-"den ikke.\n"
+"                              Anse FIL som for√¶ldet og genskab den ikke.\n"
 
-#: main.c:331
+#: src/main.c:364
+msgid ""
+"  -O[TYPE], --output-sync[=TYPE]\n"
+"                              Synchronize output of parallel jobs by TYPE.\n"
+msgstr ""
+"  -O[TYPE], --output-sync[=TYPE]\n"
+"                              Synkronis√©r udskrift af parallelle job efter "
+"TYPE\n"
+
+#: src/main.c:367
 msgid "  -p, --print-data-base       Print make's internal database.\n"
 msgstr "  -p, --print-data-base       Udskriv makes interne database.\n"
 
-#: main.c:333
+#: src/main.c:369
 msgid ""
-"  -q, --question              Run no commands; exit status says if up to "
+"  -q, --question              Run no recipe; exit status says if up to "
 "date.\n"
 msgstr ""
-"  -q, --question              Udf¯r ingen kommandoer; afslutningskoden "
-"fortÊller status.\n"
+"  -q, --question              Udf√∏r ingen kommandoer; afslutningskoden "
+"angiver\n"
+"                                om m√•let er tidssvarende.\n"
 
-#: main.c:335
+#: src/main.c:371
 msgid "  -r, --no-builtin-rules      Disable the built-in implicit rules.\n"
 msgstr ""
-"  -r, --no-builtin-rules      SlÂ de indbyggede implicitte regler fra.\n"
+"  -r, --no-builtin-rules      Sl√• de indbyggede implicitte regler fra.\n"
 
-#: main.c:337
+#: src/main.c:373
 msgid "  -R, --no-builtin-variables  Disable the built-in variable settings.\n"
-msgstr "  -R, --no-builtin-variables  SlÂ de indbyggede variabelvÊrdier fra.\n"
+msgstr "  -R, --no-builtin-variables  Sl√• de indbyggede variabelv√¶rdier fra.\n"
 
-#: main.c:339
-msgid "  -s, --silent, --quiet       Don't echo commands.\n"
-msgstr "  -s, --silent, --quiet       Udskriv ikke kommander.\n"
+#: src/main.c:375
+msgid ""
+"  --shuffle[={SEED|random|reverse|none}]\n"
+"                              Perform shuffle of prerequisites and goals.\n"
+msgstr ""
+"  --shuffle[={BASISTAL|random|reverse|none}]\n"
+"                              Bland foruds√¶tninger og m√•l.\n"
 
-#: main.c:341
+#: src/main.c:378
+msgid "  -s, --silent, --quiet       Don't echo recipes.\n"
+msgstr "  -s, --silent, --quiet       Udskriv ikke kommandoer.\n"
+
+#: src/main.c:380
+msgid "  --no-silent                 Echo recipes (disable --silent mode).\n"
+msgstr ""
+"  --no-silent                 Udskriv opskrifter (sl√• tilstanden --silent "
+"fra).\n"
+
+#: src/main.c:382
 msgid ""
 "  -S, --no-keep-going, --stop\n"
 "                              Turns off -k.\n"
 msgstr ""
 "  -S, --no-keep-going, --stop\n"
-"                              SlÂr -k fra.\n"
+"                              Sl√•r -k fra.\n"
 
-#: main.c:344
+#: src/main.c:385
 msgid "  -t, --touch                 Touch targets instead of remaking them.\n"
 msgstr ""
-"  -t, --touch                 Ber¯r mÂl i stedet for at genskabe dem.\n"
+"  -t, --touch                 Ber√∏r m√•l i stedet for at genskabe dem.\n"
 
-#: main.c:346
+#: src/main.c:387
+msgid "  --trace                     Print tracing information.\n"
+msgstr "  --trace                     Udskriv trace-information.\n"
+
+#: src/main.c:389
 msgid ""
 "  -v, --version               Print the version number of make and exit.\n"
 msgstr "  -v, --version               Udskriv makes versionnummer og afslut.\n"
 
-#: main.c:348
+#: src/main.c:391
 msgid "  -w, --print-directory       Print the current directory.\n"
 msgstr "  -w, --print-directory       Udskriv det aktuelle katalog.\n"
 
-#: main.c:350
+#: src/main.c:393
 msgid ""
 "  --no-print-directory        Turn off -w, even if it was turned on "
 "implicitly.\n"
 msgstr ""
-"  --no-print-directory        SlÂ -w fra, selv hvis det var slÂet til "
-"automatisk.\n"
+"  --no-print-directory        Sl√• -w fra; ogs√• hvis sl√•et til implicit.\n"
 
-#: main.c:352
+#: src/main.c:395
 msgid ""
 "  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE\n"
 "                              Consider FILE to be infinitely new.\n"
 msgstr ""
 "  -W FIL, --what-if=FIL, --new-file=FIL, --assume-new=FIL\n"
-"                              Anse FIL som vÊrende nyskabt.\n"
+"                              Anse FIL som v√¶rende nyskabt.\n"
 
-#: main.c:355
+#: src/main.c:398
 msgid ""
 "  --warn-undefined-variables  Warn when an undefined variable is "
 "referenced.\n"
 msgstr ""
-"  --warn-undefined-variables  Advar nÂr en udefineret variabel bruges.\n"
+"  --warn-undefined-variables  Advar n√•r en udefineret variabel bruges.\n"
 
-#: main.c:549
+#: src/main.c:736 src/main.c:738
+#, c-format
+msgid "write error: stdout"
+msgstr "skrivefejl: stdout"
+
+#: src/main.c:750
+#, c-format
 msgid "empty string invalid as file name"
 msgstr "en tom streng er ugyldig som filnavn"
 
-#: main.c:630
+#: src/main.c:842
 #, c-format
-msgid "unknown debug level specification `%s'"
-msgstr "ukendt fejls¯gningsniveau-specifikation '%s'"
+msgid "unknown debug level specification '%s'"
+msgstr "ukendt specifikation af fejls√∏gningsniveau \"%s\""
 
-#: main.c:670
-#, fuzzy, c-format
-msgid "%s: Interrupt/Exception caught (code = 0x%lx, addr = 0x%lx)\n"
-msgstr "%s: Interrupt/undtagelse fanget (kode = 0x%x, addr = 0x%x)\n"
-
-#: main.c:677
-#, fuzzy, c-format
-msgid ""
-"\n"
-"Unhandled exception filter called from program %s\n"
-"ExceptionCode = %lx\n"
-"ExceptionFlags = %lx\n"
-"ExceptionAddress = %lx\n"
-msgstr ""
-"\n"
-"UhÂndteret undtagelsesfilter kaldt fra program %s\n"
-"ExceptionCode = %x\n"
-"ExceptionFlags = %x\n"
-"ExceptionAddress = %x\n"
-
-#: main.c:685
-#, fuzzy, c-format
-msgid "Access violation: write operation at address %lx\n"
-msgstr "AdgangskrÊnkelse: skriveoperation pÂ adresse %x\n"
-
-#: main.c:686
-#, fuzzy, c-format
-msgid "Access violation: read operation at address %lx\n"
-msgstr "AdgangskrÊnkelse: lÊseoperation pÂ adresse %x\n"
-
-#: main.c:762 main.c:773
+#: src/main.c:882
 #, c-format
-msgid "find_and_set_shell setting default_shell = %s\n"
-msgstr "find_and_set_shell sÊtter default_shell = %s\n"
+msgid "unknown output-sync type '%s'"
+msgstr "ukendt type \"%s\" af output-sync"
 
-#: main.c:814
-#, c-format
-msgid "find_and_set_shell path search set default_shell = %s\n"
-msgstr "find_and_set_shell stis¯gning sÊtter default_shell = %s\n"
-
-#: main.c:1236
-#, c-format
-msgid "%s is suspending for 30 seconds..."
-msgstr "%s er standset i 30 sekunder..."
-
-#: main.c:1238
-#, c-format
-msgid "done sleep(30). Continuing.\n"
-msgstr "udf¯rt sleep(30). FortsÊtter.\n"
-
-#: main.c:1466
-msgid "Makefile from standard input specified twice."
-msgstr "Makefil fra standard-ind er angivet to gange."
-
-#: main.c:1505 vmsjobs.c:486
-msgid "fopen (temporary file)"
-msgstr "fopen (midlertidig fil)"
-
-#: main.c:1511
-msgid "fwrite (temporary file)"
-msgstr "fwrite (midlertidig fil)"
-
-#: main.c:1640
-msgid "Parallel jobs (-j) are not supported on this platform."
-msgstr "Parallelle job (-j) er ikke underst¯ttet pÂ denne platform."
-
-#: main.c:1641
-msgid "Resetting to single job (-j1) mode."
-msgstr "SÊtter tilbage til enkelt job-tilstand (-j1)."
-
-#: main.c:1656
-msgid "internal error: multiple --jobserver-fds options"
-msgstr "intern fejl: flere '--jobserver-fds'-tilvalg"
-
-#: main.c:1664
-#, c-format
-msgid "internal error: invalid --jobserver-fds string `%s'"
-msgstr "intern fejl: ugyldig '--jobserver-fds'-streng '%s'"
-
-#: main.c:1674
-msgid "warning: -jN forced in submake: disabling jobserver mode."
-msgstr "advarsel: tvunget -jN i undermake: slÂr jobserver tilstand fra."
-
-#: main.c:1684
-msgid "dup jobserver"
-msgstr "dup jobserver"
-
-#: main.c:1687
-msgid ""
-"warning: jobserver unavailable: using -j1.  Add `+' to parent make rule."
-msgstr ""
-"advarsel: jobserver ikke tilgÊngelig: bruger -j1. Tilf¯j '+' til "
-"ophavsmakeregel."
-
-#: main.c:1710
-msgid "creating jobs pipe"
-msgstr "oprettelse af jobledning"
-
-#: main.c:1725
-msgid "init jobserver pipe"
-msgstr "klarg¯ring af jobserver-ledning"
-
-#: main.c:1744
-msgid "Symbolic links not supported: disabling -L."
-msgstr ""
-
-#: main.c:1820
-msgid "Updating makefiles....\n"
-msgstr "Opdaterer makefiler....\n"
-
-#: main.c:1845
-#, c-format
-msgid "Makefile `%s' might loop; not remaking it.\n"
-msgstr "Makefilen '%s' fÂr mÂske make til at gÂ i ring; genskaber den ikke.\n"
-
-#: main.c:1924
-#, c-format
-msgid "Failed to remake makefile `%s'."
-msgstr "Genskabelse af makefilen '%s' mislykkedes."
-
-#: main.c:1941
-#, c-format
-msgid "Included makefile `%s' was not found."
-msgstr "Inkluderet makefil '%s' blev ikke fundet."
-
-#: main.c:1946
-#, c-format
-msgid "Makefile `%s' was not found"
-msgstr "Makefil '%s' blev ikke fundet."
-
-#: main.c:2016
-msgid "Couldn't change back to original directory."
-msgstr "Kunne ikke skifte tilbage til det originale katalog."
-
-#: main.c:2024
-#, fuzzy, c-format
-msgid "Re-executing[%u]:"
-msgstr "Udf¯rer igen:"
-
-#: main.c:2140
-msgid "unlink (temporary file): "
-msgstr "unlink (midlertidig fil): "
-
-#: main.c:2169
-msgid ".DEFAULT_GOAL contains more than one target"
-msgstr ""
-
-#: main.c:2189
-msgid "No targets specified and no makefile found"
-msgstr "Ingen angivne mÂl og ingen makefil fundet"
-
-#: main.c:2191
-msgid "No targets"
-msgstr "Ingen mÂl"
-
-#: main.c:2196
-msgid "Updating goal targets....\n"
-msgstr "Opdaterer endemÂl....\n"
-
-#: main.c:2222
-msgid "warning:  Clock skew detected.  Your build may be incomplete."
-msgstr "advarsel: Fejl i urets tid opdaget. Din bygning kan vÊre ukomplet."
-
-#: main.c:2383
+#: src/main.c:906
 #, c-format
 msgid "Usage: %s [options] [target] ...\n"
-msgstr "Brug: %s [tilvalg] [mÂl] ...\n"
+msgstr "Brug: %s [tilvalg] [m√•l] ...\n"
 
-#: main.c:2389
+#: src/main.c:912
 #, c-format
 msgid ""
 "\n"
@@ -1063,7 +1244,7 @@ msgstr ""
 "\n"
 "Dette program er bygget til %s\n"
 
-#: main.c:2391
+#: src/main.c:914
 #, c-format
 msgid ""
 "\n"
@@ -1072,52 +1253,226 @@ msgstr ""
 "\n"
 "Dette program er bygget til %s (%s)\n"
 
-#: main.c:2394
+#: src/main.c:917
 #, c-format
 msgid "Report bugs to <bug-make@gnu.org>\n"
-msgstr "Send fejlmeldinger (pÂ engelsk) til <bug-make@gnu.org>.\n"
+msgstr "Send fejlmeldinger (p√• engelsk) til <bug-make@gnu.org>.\n"
 
-#: main.c:2466
-#, fuzzy, c-format
-msgid "the `-%c' option requires a non-empty string argument"
-msgstr "'-%c'-tilvalget krÊver et positivt heltalligt argument"
-
-#: main.c:2518
+#: src/main.c:948
 #, c-format
-msgid "the `-%c' option requires a positive integral argument"
-msgstr "'-%c'-tilvalget krÊver et positivt heltalligt argument"
+msgid "%s: Interrupt/Exception caught (code = 0x%lx, addr = 0x%p)\n"
+msgstr "%s: Afbrydelse/undtagelse fanget (kode = 0x%lx, addr = 0x%p)\n"
 
-#: main.c:2942
+#: src/main.c:955
 #, c-format
 msgid ""
-"%sThis is free software; see the source for copying conditions.\n"
-"%sThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A\n"
-"%sPARTICULAR PURPOSE.\n"
+"\n"
+"Unhandled exception filter called from program %s\n"
+"ExceptionCode = %lx\n"
+"ExceptionFlags = %lx\n"
+"ExceptionAddress = 0x%p\n"
 msgstr ""
-"%sDette er frit programmel; se kildeteksten for kopieringsbetingelser.\n"
-"%sDer er INGEN garanti; end ikke for SALGBARHED eller EGNETHED TIL NOGET\n"
-"%sBESTEMT FORM≈L.\n"
+"\n"
+"Uh√•ndteret undtagelsesfilter kaldt fra program %s\n"
+"ExceptionCode = %lx\n"
+"ExceptionFlags = %lx\n"
+"ExceptionAddress = 0x%p\n"
 
-#: main.c:2948
-#, fuzzy, c-format
+#: src/main.c:963
+#, c-format
+msgid "Access violation: write operation at address 0x%p\n"
+msgstr "Adgangskr√¶nkelse: skriveoperation p√• adresse 0x%p\n"
+
+#: src/main.c:964
+#, c-format
+msgid "Access violation: read operation at address 0x%p\n"
+msgstr "Adgangskr√¶nkelse: l√¶seoperation p√• adresse 0x%p\n"
+
+#: src/main.c:1036 src/main.c:1050
+#, c-format
+msgid "find_and_set_shell() setting default_shell = %s\n"
+msgstr "find_and_set_shell() s√¶tter default_shell = %s\n"
+
+#: src/main.c:1106
+#, c-format
+msgid "find_and_set_shell() path search set default_shell = %s\n"
+msgstr "find_and_set_shell()-stis√∏gning s√¶tter default_shell = %s\n"
+
+#: src/main.c:1159
+msgid "unlink (temporary file): "
+msgstr "unlink (midlertidig fil): "
+
+#: src/main.c:1849
+#, c-format
 msgid ""
-"\n"
-"%sThis program built for %s\n"
+"warning: jobserver unavailable: using -j1.  Add '+' to parent make rule."
 msgstr ""
-"\n"
-"Dette program er bygget til %s\n"
+"advarsel: jobserver ikke tilg√¶ngelig: bruger -j1. Tilf√∏j \"+\" til "
+"ophavsmakeregel."
 
-#: main.c:2950
+#: src/main.c:1857
+#, c-format
+msgid "warning: -j%d forced in submake: resetting jobserver mode."
+msgstr "advarsel: -j%d tvunget i undermake: nulstiller jobservertilstand."
+
+#: src/main.c:1946
+#, c-format
+msgid "Makefile from standard input specified twice"
+msgstr "Makefil fra standard-ind er angivet to gange"
+
+#: src/main.c:1951
 #, fuzzy, c-format
-msgid ""
-"\n"
-"%sThis program built for %s (%s)\n"
-msgstr ""
-"\n"
-"Dette program er bygget til %s (%s)\n"
+msgid "cannot store makefile from stdin to a temporary file"
+msgstr "Kan ikke oprette en midlertidig fil"
 
-# %s giver dato og klokkeslÊt
-#: main.c:2968
+#: src/main.c:1959
+#, c-format
+msgid "fwrite: temporary file %s: %s"
+msgstr "fwrite: midlertidig fil %s: %s"
+
+#: src/main.c:2107
+#, c-format
+msgid "warning: -j%d forced in makefile: resetting jobserver mode."
+msgstr "advarsel: -j%d tvunget i makefil: nulstiller jobservertilstand."
+
+#: src/main.c:2203
+#, c-format
+msgid "Parallel jobs (-j) are not supported on this platform."
+msgstr "Parallelle job (-j) er ikke underst√∏ttet p√• denne platform."
+
+#: src/main.c:2204
+#, c-format
+msgid "Resetting to single job (-j1) mode."
+msgstr "S√¶tter tilbage til enkelt job-tilstand (-j1)."
+
+#: src/main.c:2260
+#, c-format
+msgid "Using jobserver controller %s\n"
+msgstr "Bruger jobserverstyring %s\n"
+
+#: src/main.c:2262
+#, c-format
+msgid "Using output-sync mutex %s\n"
+msgstr "Bruger outputsynkroniseringsmutex %s\n"
+
+#: src/main.c:2267
+#, c-format
+msgid "Symbolic links not supported: disabling -L."
+msgstr "Symbolske l√¶nker underst√∏ttes ikke: Deaktiverer -L."
+
+#: src/main.c:2344
+#, c-format
+msgid "Enabled shuffle mode: %s\n"
+msgstr "Blandet tilstand sl√•et til: %s\n"
+
+#: src/main.c:2356
+#, c-format
+msgid "Updating makefiles....\n"
+msgstr "Opdaterer makefiler....\n"
+
+#: src/main.c:2414
+#, c-format
+msgid "Makefile '%s' might loop; not remaking it.\n"
+msgstr ""
+"Makefilen \"%s\" f√•r m√•ske make til at k√∏re i ring; genskaber den ikke.\n"
+
+#: src/main.c:2460 src/main.c:2516 src/output.c:523
+#, c-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+#: src/main.c:2493 src/read.c:964
+#, c-format
+msgid "%s: failed to load"
+msgstr "%s: kunne ikke indl√¶se"
+
+#: src/main.c:2545
+#, c-format
+msgid "Failed to remake makefile '%s'."
+msgstr "Genskabelse af makefilen \"%s\" mislykkedes."
+
+#: src/main.c:2565
+#, c-format
+msgid "Included makefile '%s' was not found."
+msgstr "Inkluderet makefil \"%s\" blev ikke fundet."
+
+#: src/main.c:2569
+#, c-format
+msgid "Makefile '%s' was not found"
+msgstr "Makefilen \"%s\" blev ikke fundet"
+
+#: src/main.c:2717
+#, c-format
+msgid "Couldn't change back to original directory"
+msgstr "Kunne ikke skifte tilbage til det oprindelige katalog"
+
+#: src/main.c:2725
+#, c-format
+msgid "Re-executing[%u]:"
+msgstr "Udf√∏rer igen[%u]:"
+
+#: src/main.c:2880
+#, c-format
+msgid ".DEFAULT_GOAL contains more than one target"
+msgstr ".DEFAULT_GOAL indeholder mere end et m√•l"
+
+#: src/main.c:2904
+#, c-format
+msgid "No targets"
+msgstr "Ingen m√•l"
+
+#: src/main.c:2906
+#, c-format
+msgid "No targets specified and no makefile found"
+msgstr "Ingen angivne m√•l og ingen makefil fundet"
+
+#: src/main.c:2915
+#, c-format
+msgid "Updating goal targets....\n"
+msgstr "Opdaterer endem√•l....\n"
+
+# build?
+#: src/main.c:2939
+#, c-format
+msgid "warning:  Clock skew detected.  Your build may be incomplete."
+msgstr ""
+"advarsel: Der blev registreret en uoverensstemmelse i urets tid. Din "
+"kompilering kan v√¶re ufuldst√¶ndig."
+
+#: src/main.c:3222
+#, c-format
+msgid "the '%s%s' option requires a non-empty string argument"
+msgstr "\"-%s%s\"-tilvalget kr√¶ver et strengargument, der ikke er tomt"
+
+#: src/main.c:3315
+#, c-format
+msgid "the '-%c' option requires a positive integer argument"
+msgstr "\"-%c\"-tilvalget kr√¶ver et positivt heltalligt argument"
+
+#: src/main.c:3721
+#, c-format
+msgid "%sBuilt for %s\n"
+msgstr "%sBygget til %s\n"
+
+#: src/main.c:3723
+#, c-format
+msgid "%sBuilt for %s (%s)\n"
+msgstr "%sBygget til %s (%s)\n"
+
+#: src/main.c:3734
+#, c-format
+msgid ""
+"%sLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl."
+"html>\n"
+"%sThis is free software: you are free to change and redistribute it.\n"
+"%sThere is NO WARRANTY, to the extent permitted by law.\n"
+msgstr ""
+"%sLicens GPLv3+: GNU GPL v3 eller nyere <https://gnu.org/licenses/gpl.html>\n"
+"%sDette er frit programmel: Du kan frit √¶ndre og videredistribuere det.\n"
+"%sDer gives INGEN GARANTI i den grad, som dette tillades af loven.\n"
+
+# %s giver dato og klokkesl√¶t
+#: src/main.c:3751
 #, c-format
 msgid ""
 "\n"
@@ -1126,8 +1481,8 @@ msgstr ""
 "\n"
 "# Makedatabase, udskrevet %s"
 
-# %s giver dato og klokkeslÊt
-#: main.c:2978
+# %s giver dato og klokkesl√¶t
+#: src/main.c:3761
 #, c-format
 msgid ""
 "\n"
@@ -1136,461 +1491,589 @@ msgstr ""
 "\n"
 "# Afsluttet makedatabase %s\n"
 
-#: main.c:3101
+#: src/misc.c:606
 #, fuzzy, c-format
+msgid "%s value %s: %s"
+msgstr "%s%s: %s"
+
+#: src/misc.c:609
+#, c-format
+msgid "%s value %s: not a directory"
+msgstr ""
+
+#: src/misc.c:617
+#, fuzzy, c-format
+msgid "using default temporary directory '%s'"
+msgstr "Bruger standardopskrift for \"%s\".\n"
+
+#: src/misc.c:659
+#, fuzzy, c-format
+msgid "cannot generate temp path from %s: %s"
+msgstr "opret midlertidig fil %s: %s"
+
+#: src/misc.c:667
+#, fuzzy, c-format
+msgid "cannot generate temp name: %s"
+msgstr "kan ikke √•bne outputsynkroniseringsmutex %s: %s"
+
+#: src/misc.c:717
+#, fuzzy, c-format
+msgid "cannot create temporary file %s: %s"
+msgstr "opret midlertidig fil %s: %s"
+
+#: src/misc.c:730
+#, fuzzy, c-format
+msgid "cannot unlink temporary file %s: %s"
+msgstr "unlink midlertidig fil %s: %s"
+
+#: src/misc.c:760
+#, c-format
+msgid "fdopen: temporary file %s: %s"
+msgstr "fdopen: midlertidig fil %s: %s"
+
+#: src/misc.c:777
+#, c-format
+msgid "fopen: temporary file %s: %s"
+msgstr "fopen: midlertidig fil %s: %s"
+
+#: src/output.c:95
+#, c-format
 msgid "%s: Entering an unknown directory\n"
-msgstr "%s: GÂr til et ukendt katalog"
+msgstr "%s: G√•r til et ukendt katalog\n"
 
-#: main.c:3103
-#, fuzzy, c-format
+#: src/output.c:97
+#, c-format
 msgid "%s: Leaving an unknown directory\n"
-msgstr "%s: Forlader et ukendt katalog"
+msgstr "%s: Forlader et ukendt katalog\n"
 
-#: main.c:3106
+#: src/output.c:100
 #, c-format
-msgid "%s: Entering directory `%s'\n"
-msgstr "%s: GÂr til katalog '%s'\n"
+msgid "%s: Entering directory '%s'\n"
+msgstr "%s: G√•r til katalog \"%s\"\n"
 
-#: main.c:3109
+#: src/output.c:102
 #, c-format
-msgid "%s: Leaving directory `%s'\n"
-msgstr "%s: Forlader katalog '%s'\n"
+msgid "%s: Leaving directory '%s'\n"
+msgstr "%s: Forlader katalog \"%s\"\n"
 
-#: main.c:3114
-#, fuzzy, c-format
+#: src/output.c:106
+#, c-format
 msgid "%s[%u]: Entering an unknown directory\n"
-msgstr "%s[%u]: GÂr til et ukendt katalog"
+msgstr "%s[%u]: G√•r til et ukendt katalog\n"
 
-#: main.c:3117
-#, fuzzy, c-format
+#: src/output.c:108
+#, c-format
 msgid "%s[%u]: Leaving an unknown directory\n"
-msgstr "%s[%u]: Forlader et ukendt katalog"
+msgstr "%s[%u]: Forlader et ukendt katalog\n"
 
-#: main.c:3121
+#: src/output.c:111
 #, c-format
-msgid "%s[%u]: Entering directory `%s'\n"
-msgstr "%s[%u]: GÂr til katalog '%s'\n"
+msgid "%s[%u]: Entering directory '%s'\n"
+msgstr "%s[%u]: G√•r til katalog \"%s\"\n"
 
-#: main.c:3124
+#: src/output.c:113
 #, c-format
-msgid "%s[%u]: Leaving directory `%s'\n"
-msgstr "%s[%u]: Forlader katalog '%s'\n"
+msgid "%s[%u]: Leaving directory '%s'\n"
+msgstr "%s[%u]: Forlader katalog \"%s\"\n"
 
-#: misc.c:285
+#: src/output.c:252
+#, fuzzy, c-format
+msgid "cannot open output-sync lock file, suppressing output-sync."
+msgstr ""
+"advarsel: Kan ikke indhente outputl√•s, deaktiverer synkronisering af output."
+
+#: src/output.c:283
+#, c-format
+msgid "warning: Cannot acquire output lock, disabling output sync."
+msgstr ""
+"advarsel: Kan ikke indhente outputl√•s, deaktiverer synkronisering af output."
+
+#: src/output.c:479
 msgid ".  Stop.\n"
-msgstr ". Stop.\n"
+msgstr ".  Stop.\n"
 
-#: misc.c:306
-#, c-format
-msgid "Unknown error %d"
-msgstr "Ukendt fejl %d"
-
-#: misc.c:316
+#: src/output.c:514
 #, c-format
 msgid "%s%s: %s"
 msgstr "%s%s: %s"
 
-#: misc.c:324
-#, c-format
-msgid "%s: %s"
-msgstr "%s: %s"
-
-#: misc.c:344 misc.c:359 misc.c:376 read.c:3127
-msgid "virtual memory exhausted"
-msgstr "virtuel hukommelse opbrugt"
-
-#: misc.c:646
-#, c-format
-msgid "%s: user %lu (real %lu), group %lu (real %lu)\n"
-msgstr "%s: bruger %lu (reelt %lu), gruppe %lu (reelt %lu)\n"
-
-#: misc.c:667
-msgid "Initialized access"
-msgstr "Indledende adgang"
-
-#: misc.c:746
-msgid "User access"
-msgstr "Brugeradgang"
-
-#: misc.c:794
-msgid "Make access"
-msgstr "Make-adgang"
-
-#: misc.c:828
-msgid "Child access"
-msgstr "Barneadgang"
-
-#: misc.c:892
+#: src/posixos.c:177 src/posixos.c:182 src/posixos.c:241 src/posixos.c:249
 #, fuzzy, c-format
-msgid "write error: %s"
-msgstr "Omdirigeret fejl to %s\n"
+msgid "cannot open jobserver %s: %s"
+msgstr "Kan ikke √•bne jobserver %s: %s"
 
-#: misc.c:894
-#, fuzzy
-msgid "write error"
-msgstr "write jobserver"
+#: src/posixos.c:193 src/w32/w32os.c:219
+#, fuzzy, c-format
+msgid "unknown jobserver auth style '%s'"
+msgstr "ukendt auth-stil \"%s\" for jobserver"
 
-#: read.c:160
-msgid "Reading makefiles...\n"
-msgstr "LÊser makefiler...\n"
+#: src/posixos.c:197
+msgid "creating jobs pipe"
+msgstr "opretter job-pipe"
 
-#: read.c:315
+#: src/posixos.c:208 src/posixos.c:446
+msgid "duping jobs pipe"
+msgstr "kopierer job-pipe"
+
+#: src/posixos.c:214
+msgid "init jobserver pipe"
+msgstr "klarg√∏ring af jobserver-pipe"
+
+#: src/posixos.c:273
 #, c-format
-msgid "Reading makefile `%s'"
-msgstr "LÊser makefil '%s'"
+msgid "invalid --jobserver-auth string '%s'"
+msgstr "ugyldig \"--jobserver-auth\"-streng \"%s\""
 
-#: read.c:317
+# ?
+#: src/posixos.c:375
+msgid "write jobserver"
+msgstr "skriv jobserver"
+
+#: src/posixos.c:495
+#, c-format
+msgid "job server shut down"
+msgstr "jobserver lukket ned"
+
+#: src/posixos.c:498
+msgid "pselect jobs pipe"
+msgstr "pselect job-pipe"
+
+# ?
+#: src/posixos.c:514 src/posixos.c:628
+msgid "read jobs pipe"
+msgstr "l√¶s job-pipe"
+
+#: src/posixos.c:684
+#, c-format
+msgid "invalid --sync-mutex string '%s'"
+msgstr "ugyldig streng \"%s\" til --sync-mutex"
+
+#: src/posixos.c:693
+#, c-format
+msgid "cannot open output sync mutex %s: %s"
+msgstr "kan ikke √•bne outputsynkroniseringsmutex %s: %s"
+
+#: src/posixos.c:867
+#, c-format
+msgid "Cannot open '%s' with O_TMPFILE: %s.\n"
+msgstr ""
+
+#: src/read.c:184
+#, c-format
+msgid "Reading makefiles...\n"
+msgstr "L√¶ser makefiler...\n"
+
+#: src/read.c:322
+#, c-format
+msgid "Reading makefile '%s'"
+msgstr "L√¶ser makefilen \"%s\""
+
+#: src/read.c:324
 #, c-format
 msgid " (no default goal)"
-msgstr " (ingen standard-endemÂl)"
+msgstr " (ingen standard-endem√•l)"
 
-#: read.c:319
+#: src/read.c:326
 #, c-format
 msgid " (search path)"
-msgstr " (s¯gesti)"
+msgstr " (s√∏gesti)"
 
-#: read.c:321
+#: src/read.c:328
 #, c-format
 msgid " (don't care)"
-msgstr " (ikke n¯dvendig)"
+msgstr " (ikke n√∏dvendig)"
 
-#: read.c:323
+#: src/read.c:330
 #, c-format
 msgid " (no ~ expansion)"
 msgstr " (ingen ~-udfoldning)"
 
-#: read.c:623
+#: src/read.c:657
+#, c-format
+msgid "Skipping UTF-8 BOM in makefile '%s'\n"
+msgstr "Springer UTF-8-BOM over i makefilen \"%s\"\n"
+
+#: src/read.c:660
+#, c-format
+msgid "Skipping UTF-8 BOM in makefile buffer\n"
+msgstr "Springer UTF-8-BOM over i makefilbuffer\n"
+
+#: src/read.c:789
+#, c-format
 msgid "invalid syntax in conditional"
-msgstr "Ugyldig syntaks i betingelse"
+msgstr "ugyldig syntaks i betingelse"
 
-#: read.c:633
-msgid "extraneous `endef'"
-msgstr "fremmed 'endef'"
+#: src/read.c:996
+#, c-format
+msgid "recipe commences before first target"
+msgstr "kommandoer begynder f√∏r f√∏rste m√•l"
 
-#: read.c:645 read.c:673 variable.c:1316
+#: src/read.c:1047
+#, c-format
+msgid "missing rule before recipe"
+msgstr "manglende regel f√∏r kommandoer"
+
+#: src/read.c:1147
+#, c-format
+msgid "missing separator (did you mean TAB instead of 8 spaces?)"
+msgstr "manglende skilletegn (mente du TAB i stedet for 8 mellemrum?)"
+
+#: src/read.c:1156
+#, fuzzy, c-format
+msgid "missing separator (ifeq/ifneq must be followed by whitespace)"
+msgstr "manglende skilletegn (mente du TAB i stedet for 8 mellemrum?)"
+
+#: src/read.c:1159
+#, c-format
+msgid "missing separator"
+msgstr "manglende skilletegn"
+
+#: src/read.c:1303
+#, c-format
+msgid "missing target pattern"
+msgstr "manglende m√•lm√∏nster"
+
+#: src/read.c:1305
+#, c-format
+msgid "multiple target patterns"
+msgstr "flere m√•lm√∏nstre"
+
+#: src/read.c:1309
+#, c-format
+msgid "target pattern contains no '%%'"
+msgstr "m√•lm√∏nster indeholder ingen \"%%\""
+
+#: src/read.c:1352
+#, c-format
+msgid "missing 'endif'"
+msgstr "mangler \"endif\""
+
+#: src/read.c:1391 src/read.c:1436 src/variable.c:1776
+#, c-format
 msgid "empty variable name"
 msgstr "tomt variabelnavn"
 
-#: read.c:662
-msgid "empty `override' directive"
-msgstr "tomt 'override'-direktiv"
-
-#: read.c:687
-msgid "invalid `override' directive"
-msgstr "ugyldigt 'override'-direktiv"
-
-#: read.c:854
-msgid "commands commence before first target"
-msgstr "kommandoer begynder f¯r det f¯rste mÂl"
-
-#: read.c:905
-msgid "missing rule before commands"
-msgstr "manglende regel f¯r kommandoer"
-
-#: read.c:992
+#: src/read.c:1426
 #, c-format
-msgid "missing separator%s"
-msgstr "manglende adskiller%s"
+msgid "extraneous text after 'define' directive"
+msgstr "overskydende tekst efter \"define\"-direktiv"
 
-#: read.c:994
-msgid " (did you mean TAB instead of 8 spaces?)"
-msgstr " (mente du TAB i stedet for 8 mellemrum?)"
-
-#: read.c:1152
-msgid "missing target pattern"
-msgstr "manglende mÂlm¯nster"
-
-#: read.c:1154
-msgid "multiple target patterns"
-msgstr "flere mÂlm¯nstre"
-
-#: read.c:1158
+#: src/read.c:1451
 #, c-format
-msgid "target pattern contains no `%%'"
-msgstr "mÂlm¯nster indeholder ingen '%%'"
+msgid "missing 'endef', unterminated 'define'"
+msgstr "manglende \"endef\", uafsluttet \"define\""
 
-#: read.c:1286
-msgid "missing `endif'"
-msgstr "manglende 'endif'"
-
-#: read.c:1377
-msgid "Extraneous text after `endef' directive"
-msgstr "Fremmed tekst efter 'endef'-direktiv"
-
-#: read.c:1411
-msgid "missing `endef', unterminated `define'"
-msgstr "manglende 'endef', uafsluttet 'define'"
-
-#: read.c:1454
+#: src/read.c:1479
 #, c-format
-msgid "Extraneous text after `%s' directive"
-msgstr "Fremmed tekst efter '%s'-direktiv"
+msgid "extraneous text after 'endef' directive"
+msgstr "overskydende tekst efter \"endef\"-direktiv"
 
-#: read.c:1463 read.c:1477
+#: src/read.c:1551
 #, c-format
-msgid "extraneous `%s'"
-msgstr "fremmed '%s'"
+msgid "extraneous text after '%s' directive"
+msgstr "overskydende tekst efter \"%s\"-direktiv"
 
-#: read.c:1482
-msgid "only one `else' per conditional"
-msgstr "kun Èn 'else' per betingelse"
+#: src/read.c:1552
+#, c-format
+msgid "extraneous '%s'"
+msgstr "overskydende \"%s\""
 
-#: read.c:1824
-#, fuzzy
+#: src/read.c:1580
+#, c-format
+msgid "only one 'else' per conditional"
+msgstr "kun √©n \"else\" per betingelse"
+
+#: src/read.c:1856
+#, c-format
 msgid "Malformed target-specific variable definition"
-msgstr "Misdannet per-mÂl variabeldefinition"
+msgstr "Misdannet m√•lspecifik variabeldefinition"
 
-#: read.c:1886
-msgid "prerequisites cannot be defined in command scripts"
-msgstr ""
+#: src/read.c:1998
+#, c-format
+msgid ".WAIT should not have prerequisites"
+msgstr ".WAIT b√∏r ikke have foruds√¶tninger"
 
-#: read.c:1921
+#: src/read.c:2004
+#, c-format
+msgid ".WAIT should not have commands"
+msgstr ".WAIT b√∏r ikke have kommandoer"
+
+#: src/read.c:2042
+#, c-format
+msgid "prerequisites cannot be defined in recipes"
+msgstr "der kan ikke defineres foruds√¶tninger i kommandoer"
+
+#: src/read.c:2060
+#, c-format
+msgid "grouped targets must provide a recipe"
+msgstr "grupperede m√•l skal angive en opskrift"
+
+#: src/read.c:2103
+#, c-format
 msgid "mixed implicit and static pattern rules"
-msgstr "blandede implicitte og statiske m¯nsterregler"
+msgstr "blandede implicitte og statiske m√∏nsterregler"
 
-#: read.c:1924
+#: src/read.c:2126
+#, c-format
 msgid "mixed implicit and normal rules"
 msgstr "blandede implicitte og normale regler"
 
-#: read.c:1954
+#: src/read.c:2158
 #, c-format
-msgid "target `%s' doesn't match the target pattern"
-msgstr "mÂl '%s' passer ikke til mÂlm¯nstret"
+msgid "target '%s' doesn't match the target pattern"
+msgstr "m√•let \"%s\" passer ikke til m√•lm√∏nstret"
 
-#: read.c:1973 read.c:2074
+#: src/read.c:2173 src/read.c:2224
 #, c-format
-msgid "target file `%s' has both : and :: entries"
-msgstr "mÂlfil '%s' har bÂde :- og ::-angivelser"
+msgid "target file '%s' has both : and :: entries"
+msgstr "m√•lfilen \"%s\" har b√•de :- og ::-angivelser"
 
-#: read.c:1979
+#: src/read.c:2179
 #, c-format
-msgid "target `%s' given more than once in the same rule."
-msgstr "target '%s' optrÊder mere end Èn gang i samme regel."
+msgid "target '%s' given more than once in the same rule"
+msgstr "m√•let \"%s\" optr√¶der mere end √©n gang i samme regel"
 
-#: read.c:1988
+#: src/read.c:2189
 #, c-format
-msgid "warning: overriding commands for target `%s'"
-msgstr "advarsel: tilsidesÊtter kommandoer for mÂl '%s'"
+msgid "warning: overriding recipe for target '%s'"
+msgstr "advarsel: tilsides√¶tter opskrift for m√•let \"%s\""
 
-#: read.c:1991
+#: src/read.c:2192
 #, c-format
-msgid "warning: ignoring old commands for target `%s'"
-msgstr "advarsel: ignorerer gamle kommadoer for mÂl '%s'"
+msgid "warning: ignoring old recipe for target '%s'"
+msgstr "advarsel: ignorerer gammel opskrift for m√•let \"%s\""
 
-#: read.c:2575
+#: src/read.c:2311
+#, c-format
+msgid "*** mixed implicit and normal rules: deprecated syntax"
+msgstr "*** blandede implicitte og normale regler: for√¶ldet syntaks"
+
+#: src/read.c:2328
+#, c-format
+msgid "warning: overriding group membership for target '%s'"
+msgstr "advarsel: tilsides√¶tter gruppemedlemsskab for m√•let \"%s\""
+
+#: src/read.c:2686
+#, c-format
 msgid "warning: NUL character seen; rest of line ignored"
 msgstr "advarsel: NUL-tegn set; resten af linjen ignoreres"
 
-#: remake.c:229
+# peer?
+#: src/remake.c:97
 #, c-format
-msgid "Nothing to be done for `%s'."
-msgstr "Ingenting at g¯re for '%s'."
+msgid "warning: pattern recipe did not update peer target '%s'."
+msgstr "advarsel: m√∏nsteropskrift opdaterede ikke peer-m√•let \"%s\"."
 
-#: remake.c:230
+#: src/remake.c:258
 #, c-format
-msgid "`%s' is up to date."
-msgstr "'%s' er tidssvarende."
+msgid "Nothing to be done for '%s'."
+msgstr "Ingenting at g√∏re for \"%s\"."
 
-#: remake.c:297
+#: src/remake.c:259
 #, c-format
-msgid "Pruning file `%s'.\n"
-msgstr "BeskÊrer fil '%s'.\n"
+msgid "'%s' is up to date."
+msgstr "\"%s\" er tidssvarende."
 
-#: remake.c:349
+#: src/remake.c:354
 #, c-format
-msgid "%sNo rule to make target `%s'%s"
-msgstr "%sIngen regel til at skabe mÂl '%s'%s"
+msgid "Pruning file '%s'.\n"
+msgstr "Besk√¶rer fil \"%s\".\n"
 
-#: remake.c:351
+#: src/remake.c:420
 #, c-format
-msgid "%sNo rule to make target `%s', needed by `%s'%s"
-msgstr "%sIngen regel til at skabe mÂl '%s' som beh¯ves af '%s'%s"
+msgid "%sNo rule to make target '%s', needed by '%s'%s"
+msgstr "%sIngen regel til at skabe m√•let \"%s\" som beh√∏ves af \"%s\"%s"
 
-#: remake.c:378
+#: src/remake.c:430
 #, c-format
-msgid "Considering target file `%s'.\n"
-msgstr "Overvejer mÂlfil '%s'.\n"
+msgid "%sNo rule to make target '%s'%s"
+msgstr "%sIngen regel til at skabe m√•let \"%s\"%s"
 
-#: remake.c:385
+#: src/remake.c:456
 #, c-format
-msgid "Recently tried and failed to update file `%s'.\n"
-msgstr "Opdatering af fil '%s' er forgÊves pr¯vet for nylig.\n"
+msgid "Considering target file '%s'.\n"
+msgstr "Overvejer m√•lfilen \"%s\".\n"
 
-#: remake.c:400
+#: src/remake.c:463
 #, c-format
-msgid "File `%s' was considered already.\n"
-msgstr "Fil '%s' er allerede overvejet.\n"
+msgid "Recently tried and failed to update file '%s'.\n"
+msgstr "Opdatering af fil \"%s\" er forg√¶ves pr√∏vet for nylig.\n"
 
-#: remake.c:410
+#: src/remake.c:475
 #, c-format
-msgid "Still updating file `%s'.\n"
-msgstr "Opdaterer stadig fil '%s'.\n"
+msgid "File '%s' was considered already.\n"
+msgstr "Filen \"%s\" er allerede overvejet.\n"
 
-#: remake.c:413
+#: src/remake.c:485
 #, c-format
-msgid "Finished updating file `%s'.\n"
-msgstr "Opdatering af fil '%s' afsluttet.\n"
+msgid "Still updating file '%s'.\n"
+msgstr "Opdaterer stadig fil \"%s\".\n"
 
-#: remake.c:434
+#: src/remake.c:488
 #, c-format
-msgid "File `%s' does not exist.\n"
-msgstr "Filen '%s' findes ikke.\n"
+msgid "Finished updating file '%s'.\n"
+msgstr "Opdatering af fil \"%s\" afsluttet.\n"
 
-#: remake.c:441
+#: src/remake.c:518
+#, c-format
+msgid "File '%s' does not exist.\n"
+msgstr "Filen \"%s\" findes ikke.\n"
+
+#: src/remake.c:525
 #, c-format
 msgid ""
-"*** Warning: .LOW_RESOLUTION_TIME file `%s' has a high resolution time stamp"
+"*** Warning: .LOW_RESOLUTION_TIME file '%s' has a high resolution time stamp"
 msgstr ""
-"*** Advarsel: .LOW_RESOLUTION_TIME-fil '%s' har et tidsstempel med h¯j "
-"opl¯sning"
+"*** Advarsel: .LOW_RESOLUTION_TIME-fil \"%s\" har et tidsstempel med h√∏j "
+"opl√∏sning"
 
-#: remake.c:454 remake.c:962
+# peer?
+#: src/remake.c:543
 #, c-format
-msgid "Found an implicit rule for `%s'.\n"
-msgstr "Fandt en implicit regel for '%s'.\n"
+msgid "Grouped target peer '%s' of file '%s' does not exist.\n"
+msgstr "Grupperet m√•l-peer \"%s\" for filen \"%s\" findes ikke.\n"
 
-#: remake.c:456 remake.c:964
+#: src/remake.c:563
 #, c-format
-msgid "No implicit rule found for `%s'.\n"
-msgstr "Ingen implicit regel for '%s' fundet.\n"
+msgid "Using default recipe for '%s'.\n"
+msgstr "Bruger standardopskrift for \"%s\".\n"
 
-#: remake.c:462 remake.c:970
-#, c-format
-msgid "Using default commands for `%s'.\n"
-msgstr "Bruger standardkommandoer for '%s'.\n"
-
-#: remake.c:484 remake.c:996
+#: src/remake.c:608 src/remake.c:1167
 #, c-format
 msgid "Circular %s <- %s dependency dropped."
-msgstr "CirkulÊr %s <- %s afhÊngighed opgivet."
+msgstr "Cirkul√¶r %s <- %s afh√¶ngighed opgivet."
 
-#: remake.c:601
+#: src/remake.c:748
 #, c-format
-msgid "Finished prerequisites of target file `%s'.\n"
-msgstr "Afsluttet forudsÊtningerne for mÂlfil '%s'.\n"
+msgid "The prerequisites of '%s' are being made.\n"
+msgstr "Foruds√¶tningerne for \"%s\" er ved at blive skabt.\n"
 
-#: remake.c:607
+#: src/remake.c:752
 #, c-format
-msgid "The prerequisites of `%s' are being made.\n"
-msgstr "ForudsÊtningerne for '%s' er ved at blive skabt.\n"
+msgid "Finished prerequisites of target file '%s'.\n"
+msgstr "Afsluttede foruds√¶tningerne for m√•lfilen \"%s\".\n"
 
-#: remake.c:620
+#: src/remake.c:762
 #, c-format
-msgid "Giving up on target file `%s'.\n"
-msgstr "Opgiver mÂlfil '%s'.\n"
+msgid "Giving up on target file '%s'.\n"
+msgstr "Opgiver m√•lfil \"%s\".\n"
 
-#: remake.c:625
+#: src/remake.c:767
 #, c-format
-msgid "Target `%s' not remade because of errors."
-msgstr "MÂlet '%s' ikke genskabt pÂ grund af fejl."
+msgid "Target '%s' not remade because of errors."
+msgstr "M√•let \"%s\" ikke genskabt p√• grund af fejl."
 
-#: remake.c:677
+#: src/remake.c:819
 #, c-format
-msgid "Prerequisite `%s' is order-only for target `%s'.\n"
-msgstr "ForudsÊtningen '%s' angiver kun rÊkkef¯lgen ift. mÂlet '%s'.\n"
+msgid "Prerequisite '%s' is order-only for target '%s'.\n"
+msgstr "Foruds√¶tningen \"%s\" angiver kun r√¶kkef√∏lgen ift. m√•let \"%s\".\n"
 
-#: remake.c:682
+#: src/remake.c:824
 #, c-format
-msgid "Prerequisite `%s' of target `%s' does not exist.\n"
-msgstr "ForudsÊtningen '%s' for mÂlet '%s' findes ikke.\n"
+msgid "Prerequisite '%s' of target '%s' does not exist.\n"
+msgstr "Foruds√¶tningen \"%s\" for m√•let \"%s\" findes ikke.\n"
 
-#: remake.c:687
+#: src/remake.c:829
 #, c-format
-msgid "Prerequisite `%s' is newer than target `%s'.\n"
-msgstr "ForudsÊtningen '%s' er nyere end mÂlet '%s'.\n"
+msgid "Prerequisite '%s' is newer than target '%s'.\n"
+msgstr "Foruds√¶tningen \"%s\" er nyere end m√•let \"%s\".\n"
 
-#: remake.c:690
+#: src/remake.c:832
 #, c-format
-msgid "Prerequisite `%s' is older than target `%s'.\n"
-msgstr "ForudsÊtningen '%s' er Êldre end mÂlet '%s'.\n"
+msgid "Prerequisite '%s' is older than target '%s'.\n"
+msgstr "Foruds√¶tningen \"%s\" er √¶ldre end m√•let \"%s\".\n"
 
-#: remake.c:708
+#: src/remake.c:847
 #, c-format
-msgid "Target `%s' is double-colon and has no prerequisites.\n"
-msgstr "MÂlet '%s' er med dobbelt-kolon og har ingen forudsÊtninger.\n"
+msgid "Target '%s' is double-colon and has no prerequisites.\n"
+msgstr "M√•let \"%s\" er med dobbelt-kolon og har ingen foruds√¶tninger.\n"
 
-#: remake.c:715
+#: src/remake.c:854
 #, c-format
-msgid "No commands for `%s' and no prerequisites actually changed.\n"
-msgstr "Ingen kommandoer til '%s' og ingen forudsÊtninger er Êndrede.\n"
+msgid "No recipe for '%s' and no prerequisites actually changed.\n"
+msgstr "Ingen opskrift til \"%s\", og ingen foruds√¶tninger har √¶ndret sig.\n"
 
-#: remake.c:720
+#: src/remake.c:859
 #, c-format
-msgid "Making `%s' due to always-make flag.\n"
-msgstr "Skaber '%s' pga. \"always-make\"-flag.\n"
+msgid "Making '%s' due to always-make flag.\n"
+msgstr "Skaber \"%s\" pga. \"always-make\"-flag.\n"
 
-#: remake.c:728
+#: src/remake.c:867
 #, c-format
-msgid "No need to remake target `%s'"
-msgstr "Ingen grund til at genskabe mÂlet '%s'"
+msgid "No need to remake target '%s'"
+msgstr "Ingen grund til at genskabe m√•let \"%s\""
 
-#: remake.c:730
+#: src/remake.c:869
 #, c-format
-msgid "; using VPATH name `%s'"
-msgstr "; bruger VPATH-navnet '%s'"
+msgid "; using VPATH name '%s'"
+msgstr "; bruger VPATH-navnet \"%s\""
 
-#: remake.c:750
+#: src/remake.c:894
 #, c-format
-msgid "Must remake target `%s'.\n"
-msgstr "Skal genskabe mÂlet '%s'.\n"
+msgid "Must remake target '%s'.\n"
+msgstr "Skal genskabe m√•let \"%s\".\n"
 
-#: remake.c:756
+#: src/remake.c:900
 #, c-format
-msgid "  Ignoring VPATH name `%s'.\n"
-msgstr " Ignorerer VPATH-navnet '%s'.\n"
+msgid "  Ignoring VPATH name '%s'.\n"
+msgstr " Ignorerer VPATH-navnet \"%s\".\n"
 
-#: remake.c:765
+#: src/remake.c:909
 #, c-format
-msgid "Commands of `%s' are being run.\n"
-msgstr "Kommandoer til '%s' er ved at blive udf¯rt.\n"
+msgid "Recipe of '%s' is being run.\n"
+msgstr "Opskriften for \"%s\" er ved at blive k√∏rt.\n"
 
-#: remake.c:772
+#: src/remake.c:916
 #, c-format
-msgid "Failed to remake target file `%s'.\n"
-msgstr "Genskabelse af mÂlfil '%s' mislykkedes.\n"
+msgid "Failed to remake target file '%s'.\n"
+msgstr "Genskabelse af m√•lfilen \"%s\" mislykkedes.\n"
 
-#: remake.c:775
+#: src/remake.c:919
 #, c-format
-msgid "Successfully remade target file `%s'.\n"
-msgstr "MÂlfil '%s' genskabt.\n"
+msgid "Successfully remade target file '%s'.\n"
+msgstr "M√•lfilen \"%s\" genskabt.\n"
 
-#: remake.c:778
+#: src/remake.c:922
 #, c-format
-msgid "Target file `%s' needs remade under -q.\n"
-msgstr "Med -q trÊnger mÂlfilen '%s' til at blive genskabt.\n"
+msgid "Target file '%s' needs to be remade under -q.\n"
+msgstr "Det er n√∏dvendigt at genskabe m√•lfilen \"%s\" med -q.\n"
 
-#: remake.c:1306
+#: src/remake.c:1120
 #, c-format
-msgid "Warning: File `%s' has modification time in the future"
-msgstr "Advarsel: ∆ndringstiden for filen '%s' er i fremtiden"
+msgid "Using default commands for '%s'.\n"
+msgstr "Bruger standardkommandoer for \"%s\".\n"
 
-#: remake.c:1313
+#: src/remake.c:1503
 #, c-format
-msgid "Warning: File `%s' has modification time %.2g s in the future"
-msgstr "Advarsel: ∆ndringstiden for filen '%s' er %.2g s i fremtiden"
+msgid "Warning: File '%s' has modification time %s s in the future"
+msgstr "Advarsel: Filen \"%s\" har modifikationstidspunkt %s s i fremtiden"
 
-#: remake.c:1511
+#: src/remake.c:1751
 #, c-format
-msgid ".LIBPATTERNS element `%s' is not a pattern"
-msgstr ".LIBPATTERNS-element '%s' er ikke et m¯nster"
+msgid ".LIBPATTERNS element '%s' is not a pattern"
+msgstr ".LIBPATTERNS-elementet \"%s\" er ikke et m√∏nster"
 
 # "remote job exportation interface to the Customs daemon": jeg aner ikke
-# hvad der er tale om. I ¯vrigt ser remote-cstms.c forÊldet/ubrugt ud, og
-# koden er ikke underst¯ttet af GNU...
-#: remote-cstms.c:125
+# hvad der er tale om. I √∏vrigt ser remote-cstms.c for√¶ldet/ubrugt ud, og
+# koden er ikke underst√∏ttet af GNU...
+#: src/remote-cstms.c:118
 #, c-format
 msgid "Customs won't export: %s\n"
 msgstr "Customs kan ikke eksporteres: %s\n"
 
-#: rule.c:548
+#: src/rule.c:357
+msgid "warning: ignoring prerequisites on suffix rule definition"
+msgstr "advarsel: ignorerer foruds√¶tninger for suffiks-regeldefinition"
+
+#: src/rule.c:592
 msgid ""
 "\n"
 "# Implicit Rules"
 msgstr ""
 "\n"
-"# Implicitte regler."
+"# Implicitte regler"
 
-#: rule.c:563
+#: src/rule.c:607
 msgid ""
 "\n"
 "# No implicit rules."
@@ -1598,242 +2081,284 @@ msgstr ""
 "\n"
 "# Ingen implicitte regler."
 
-#: rule.c:566
+#: src/rule.c:610
 #, c-format
 msgid ""
 "\n"
-"# %u implicit rules, %u"
+"# %u implicit rules, %u (%.1f%%) terminal."
 msgstr ""
 "\n"
-"# %u implicitte regler, %u"
+"# %u implicitte regler, %u (%.1f %%) terminal."
 
-#: rule.c:575
-msgid " terminal."
-msgstr " terminale."
-
-#: rule.c:583
+#: src/rule.c:619
 #, c-format
-msgid "BUG: num_pattern_rules wrong!  %u != %u"
-msgstr "FEJL: num_pattern_rules forkert! %u != %u"
+msgid "BUG: num_pattern_rules is wrong!  %u != %u"
+msgstr "FEJL: forkert num_pattern_rules!  %u != %u"
 
-#: signame.c:85
+#: src/shuffle.c:93
+#, c-format
+msgid "invalid shuffle mode: %s: '%s'"
+msgstr "ugyldig blandetilstand: %s: \"%s\""
+
+#: src/signame.c:84
 msgid "unknown signal"
 msgstr "ukendt signal"
 
 # De fleste af signalnavnene fra signame.c er kopieret fra libc.da.po,
 # kun ganske enkelte findes ikke der.
-#: signame.c:93
+#: src/signame.c:92
 msgid "Hangup"
-msgstr "LÊg pÂ"
+msgstr "L√¶g p√•"
 
-#: signame.c:96
+#: src/signame.c:95
 msgid "Interrupt"
 msgstr "Afbrudt"
 
-#: signame.c:99
+#: src/signame.c:98
 msgid "Quit"
 msgstr "Afslut"
 
-#: signame.c:102
+#: src/signame.c:101
 msgid "Illegal Instruction"
 msgstr "Ulovlig instruktion"
 
-#: signame.c:105
+#: src/signame.c:104
 msgid "Trace/breakpoint trap"
-msgstr "Sporings-/stoppunkts-fÊlde"
+msgstr "Sporings-/stoppunkts-f√¶lde"
 
-#: signame.c:110
+#: src/signame.c:109
 msgid "Aborted"
 msgstr "Afbrudt"
 
-#: signame.c:113
+#: src/signame.c:112
 msgid "IOT trap"
-msgstr "IOT_fÊlde"
+msgstr "IOT_f√¶lde"
 
-#: signame.c:116
+#: src/signame.c:115
 msgid "EMT trap"
-msgstr "EmulatorfÊlde"
+msgstr "Emulatorf√¶lde"
 
-#: signame.c:119
+#: src/signame.c:118
 msgid "Floating point exception"
-msgstr "UndtagelsestilfÊlde ved flydendetals-operation"
+msgstr "Undtagelsestilf√¶lde ved flydendetals-operation"
 
-#: signame.c:122
+#: src/signame.c:121
 msgid "Killed"
-msgstr "DrÊbt"
+msgstr "Dr√¶bt"
 
-#: signame.c:125
+#: src/signame.c:124
 msgid "Bus error"
 msgstr "Busfejl"
 
-#: signame.c:128
+#: src/signame.c:127
 msgid "Segmentation fault"
 msgstr "Lagersegmentfejl"
 
-#: signame.c:131
+#: src/signame.c:130
 msgid "Bad system call"
 msgstr "Ugyldigt systemkald"
 
-#: signame.c:134
+#: src/signame.c:133
 msgid "Broken pipe"
-msgstr "R¯ret blev brudt"
+msgstr "Pipe blev brudt"
 
-#: signame.c:137
+#: src/signame.c:136
 msgid "Alarm clock"
 msgstr "Alarmen gik"
 
-#: signame.c:140
+#: src/signame.c:139
 msgid "Terminated"
 msgstr "Termineret"
 
-#: signame.c:143
+#: src/signame.c:142
 msgid "User defined signal 1"
 msgstr "Brugerdefineret signal 1"
 
-#: signame.c:146
+#: src/signame.c:145
 msgid "User defined signal 2"
 msgstr "Brugerdefineret signal 2"
 
-#: signame.c:151 signame.c:154
+#: src/signame.c:150 src/signame.c:153
 msgid "Child exited"
 msgstr "Barnet afsluttet"
 
-#: signame.c:157
+#: src/signame.c:156
 msgid "Power failure"
-msgstr "Str¯mmen gik"
+msgstr "Str√∏mmen gik"
 
-#: signame.c:160
+#: src/signame.c:159
 msgid "Stopped"
 msgstr "Stoppet"
 
-#: signame.c:163
+#: src/signame.c:162
 msgid "Stopped (tty input)"
-msgstr "Stoppet (ville lÊse fra tty)"
+msgstr "Stoppet (ville l√¶se fra tty)"
 
-#: signame.c:166
+#: src/signame.c:165
 msgid "Stopped (tty output)"
 msgstr "Stoppet (ville skrive til tty)"
 
-#: signame.c:169
+#: src/signame.c:168
 msgid "Stopped (signal)"
 msgstr "Stoppet (signal)"
 
-#: signame.c:172
+#: src/signame.c:171
 msgid "CPU time limit exceeded"
-msgstr "BegrÊnsning af CPU-tid overskredet"
+msgstr "Begr√¶nsning af CPU-tid overskredet"
 
-#: signame.c:175
+#: src/signame.c:174
 msgid "File size limit exceeded"
-msgstr "GrÊnse for filst¯rrelse overskredet"
+msgstr "Gr√¶nse for filst√∏rrelse overskredet"
 
-#: signame.c:178
+#: src/signame.c:177
 msgid "Virtual timer expired"
-msgstr "Virtuel tidsgrÊnse overskredet"
+msgstr "Virtuel tidsgr√¶nse overskredet"
 
-#: signame.c:181
+#: src/signame.c:180
 msgid "Profiling timer expired"
-msgstr "Profileringstiden udl¯b"
+msgstr "Profileringstiden udl√∏b"
 
-#: signame.c:187
+#: src/signame.c:186
 msgid "Window changed"
-msgstr "Vinduet blev Êndret"
+msgstr "Vinduet blev √¶ndret"
 
-#: signame.c:190
+#: src/signame.c:189
 msgid "Continued"
-msgstr "FortsÊttes"
+msgstr "Forts√¶ttes"
 
-#: signame.c:193
+#: src/signame.c:192
 msgid "Urgent I/O condition"
 msgstr "Kritisk I/O-tilstand"
 
-#: signame.c:200 signame.c:209
+#: src/signame.c:199 src/signame.c:208
 msgid "I/O possible"
 msgstr "I/O mulig"
 
-#: signame.c:203
+#: src/signame.c:202
 msgid "SIGWIND"
 msgstr "SIGWIND"
 
-#: signame.c:206
+#: src/signame.c:205
 msgid "SIGPHONE"
 msgstr "SIGPHONE"
 
-#: signame.c:212
+#: src/signame.c:211
 msgid "Resource lost"
 msgstr "Resurse tabt"
 
-#: signame.c:215
+#: src/signame.c:214
 msgid "Danger signal"
 msgstr "Faresignal"
 
-#: signame.c:218
+#: src/signame.c:217
 msgid "Information request"
-msgstr "Informationsforesp¯rgsel"
+msgstr "Informationsforesp√∏rgsel"
 
-#: signame.c:221
+#: src/signame.c:220
 msgid "Floating point co-processor not available"
-msgstr "FlydendetalshjÊlpeprocessor ikke tilgÊngelig"
+msgstr "Flydendetalshj√¶lpeprocessor ikke tilg√¶ngelig"
 
-#: strcache.c:210
+#: src/strcache.c:274
 #, c-format
 msgid ""
 "\n"
-"%s # of strings in strcache: %d\n"
+"%s No strcache buffers\n"
 msgstr ""
+"\n"
+"%s Ingen strcache-buffere\n"
 
-#: strcache.c:211
+#: src/strcache.c:304
 #, c-format
-msgid "%s # of strcache buffers: %d\n"
+msgid ""
+"\n"
+"%s strcache buffers: %lu (%lu) / strings = %lu / storage = %lu B / avg = %lu "
+"B\n"
 msgstr ""
+"\n"
+"%s strcache-buffere: %lu (%lu) / strenge = %lu / lager = %lu B / middel = "
+"%lu B\n"
 
-#: strcache.c:212
+#: src/strcache.c:308
 #, c-format
-msgid "%s strcache size: total = %d / max = %d / min = %d / avg = %d\n"
+msgid ""
+"%s current buf: size = %hu B / used = %hu B / count = %hu / avg = %u B\n"
 msgstr ""
+"%s nuv√¶rende buf: st√∏rrelse = %hu B / brugt = %hu B / antal = %hu / middel = "
+"%u B\n"
 
-#: strcache.c:214
+# Ikke sikker p√• hvad %s er
+#: src/strcache.c:319
 #, c-format
-msgid "%s strcache free: total = %d / max = %d / min = %d / avg = %d\n"
+msgid "%s other used: total = %lu B / count = %lu / avg = %lu B\n"
+msgstr "%s √∏vrigt brugt: i alt = %lu B / antal = %lu / middel = %lu B\n"
+
+#: src/strcache.c:322
+#, c-format
+msgid ""
+"%s other free: total = %lu B / max = %lu B / min = %lu B / avg = %hu B\n"
 msgstr ""
+"%s √∏vrigt frit: i alt = %lu B / maks = %lu B / min = %lu B / middel = %hu B\n"
 
-#: variable.c:1369
-msgid "default"
-msgstr "forvalgt"
+#: src/strcache.c:326
+#, c-format
+msgid ""
+"\n"
+"%s strcache performance: lookups = %lu / hit rate = %lu%%\n"
+msgstr ""
+"\n"
+"%s strcache-ydelse: opslag = %lu / tr√¶ffere = %lu%%\n"
 
-#: variable.c:1372
-msgid "environment"
-msgstr "milj¯"
+#: src/strcache.c:328
+msgid ""
+"# hash-table stats:\n"
+"# "
+msgstr ""
+"# statistik for hashtabel:\n"
+"# "
 
-#: variable.c:1375
-msgid "makefile"
-msgstr "makefil"
+#: src/variable.c:1850
+#, c-format
+msgid "warning: undefined variable '%.*s'"
+msgstr "advarsel: udefineret variabel \"%.*s\""
 
-#: variable.c:1378
-msgid "environment under -e"
-msgstr "milj¯ med -e"
-
-#: variable.c:1381
-msgid "command line"
-msgstr "kommandolinje"
-
-#: variable.c:1384
-msgid "`override' directive"
-msgstr "'override'-direktiv"
-
-#: variable.c:1387
+#: src/variable.c:1867
 msgid "automatic"
 msgstr "automatisk"
 
-#: variable.c:1396
+#: src/variable.c:1870
+msgid "default"
+msgstr "forvalgt"
+
+#: src/variable.c:1873
+msgid "environment"
+msgstr "milj√∏"
+
+#: src/variable.c:1876
+msgid "makefile"
+msgstr "makefil"
+
+#: src/variable.c:1879
+msgid "environment under -e"
+msgstr "milj√∏ med -e"
+
+#: src/variable.c:1882
+msgid "command line"
+msgstr "kommandolinje"
+
+#: src/variable.c:1885
+msgid "'override' directive"
+msgstr "\"override\"-direktiv"
+
+#: src/variable.c:1895
 #, c-format
-msgid " (from `%s', line %lu)"
-msgstr " (fra '%s', linje %lu)"
+msgid " (from '%s', line %lu)"
+msgstr " (fra \"%s\", linje %lu)"
 
-#: variable.c:1438
+#: src/variable.c:1958
 msgid "# variable set hash-table stats:\n"
-msgstr "# Statistik for variabelsÊt-hash-spande:\n"
+msgstr "# Statistik for variabels√¶t-hash-spande:\n"
 
-#: variable.c:1449
+#: src/variable.c:1969
 msgid ""
 "\n"
 "# Variables\n"
@@ -1841,169 +2366,309 @@ msgstr ""
 "\n"
 "# Variabler\n"
 
-#: variable.c:1453
-#, fuzzy
+#: src/variable.c:1973
 msgid ""
 "\n"
 "# Pattern-specific Variable Values"
 msgstr ""
 "\n"
-"# M¯nsterspecifikke variabelvÊrdier"
+"# M√∏nsterspecifikke variabelv√¶rdier"
 
-#: variable.c:1467
+#: src/variable.c:1987
 msgid ""
 "\n"
 "# No pattern-specific variable values."
 msgstr ""
 "\n"
-"# Ingen m¯nsterspecifikke variabelvÊrdier."
+"# Ingen m√∏nsterspecifikke variabelv√¶rdier."
 
-#: variable.c:1469
+#: src/variable.c:1989
 #, c-format
 msgid ""
 "\n"
 "# %u pattern-specific variable values"
 msgstr ""
 "\n"
-"# %u m¯nsterspecifikke variabelvÊrdier"
+"# %u m√∏nsterspecifikke variabelv√¶rdier"
 
-#: variable.h:189
+#: src/vmsfunctions.c:91
 #, c-format
-msgid "warning: undefined variable `%.*s'"
-msgstr "advarsel: udefineret vaiabel '%.*s'"
+msgid "sys$search() failed with %d\n"
+msgstr "sys$search() mislykkedes med %d\n"
 
-#: vmsfunctions.c:94
-#, c-format
-msgid "sys$search failed with %d\n"
-msgstr "sys$search mislykkedes med %d\n"
-
-#: vmsjobs.c:71
-#, c-format
-msgid "Warning: Empty redirection\n"
-msgstr "Advarsel: Tom omdirigering\n"
-
-#: vmsjobs.c:175
-#, c-format
-msgid "internal error: `%s' command_state"
-msgstr "intern fejl: '%s' command_state"
-
-#: vmsjobs.c:268
-#, c-format
-msgid "-warning, CTRL-Y will leave sub-process(es) around.\n"
-msgstr "-advarsel, CTRL-Y vil efterlade underproces(ser).\n"
-
-#: vmsjobs.c:284
+#: src/vmsjobs.c:244
 #, c-format
 msgid "-warning, you may have to re-enable CTRL-Y handling from DCL.\n"
 msgstr ""
-"-advarsel, du kan blive n¯dt til at genetablere CTRL-Y-behandling fra DCL.\n"
+"-advarsel, du kan blive n√∏dt til at genetablere CTRL-Y-behandling fra DCL.\n"
 
-#: vmsjobs.c:407
-#, c-format
-msgid "BUILTIN [%s][%s]\n"
-msgstr "BUILTIN [%s][%s]\n"
-
-#: vmsjobs.c:418
+#: src/vmsjobs.c:681
 #, c-format
 msgid "BUILTIN CD %s\n"
 msgstr "BUILTIN CD %s\n"
 
-#: vmsjobs.c:436
+#: src/vmsjobs.c:1224
 #, c-format
-msgid "BUILTIN RM %s\n"
-msgstr "BUILTIN RM %s\n"
+msgid "DCL: %s\n"
+msgstr "DCL: %s\n"
 
-#: vmsjobs.c:457
+#: src/vmsjobs.c:1281
 #, c-format
-msgid "Unknown builtin command '%s'\n"
-msgstr "Ukendt indbygget kommando '%s'\n"
+msgid "Append output to %s\n"
+msgstr "Tilf√∏j uddata til slutningen af %s\n"
 
-#: vmsjobs.c:479
+#: src/vmsjobs.c:1306
 #, c-format
-msgid "Error, empty command\n"
-msgstr "Fejl, tom kommando\n"
+msgid "Append %.*s and cleanup\n"
+msgstr "Tilf√∏j %.*s og ryd op\n"
 
-#: vmsjobs.c:491
-#, c-format
-msgid "Redirected input from %s\n"
-msgstr "Omdirigeret inddata from %s\n"
-
-#: vmsjobs.c:498
-#, c-format
-msgid "Redirected error to %s\n"
-msgstr "Omdirigeret fejl to %s\n"
-
-#: vmsjobs.c:505
-#, c-format
-msgid "Redirected output to %s\n"
-msgstr "Omdirigeret uddata til %s\n"
-
-#: vmsjobs.c:568
+#: src/vmsjobs.c:1319
 #, c-format
 msgid "Executing %s instead\n"
-msgstr "Udf¯rer i stedet %s\n"
+msgstr "Udf√∏rer i stedet %s\n"
 
-#: vmsjobs.c:668
-#, c-format
-msgid "Error spawning, %d\n"
-msgstr "Fejl ved spawn, %d\n"
-
-#: vpath.c:571
+#: src/vpath.c:582
 msgid ""
 "\n"
 "# VPATH Search Paths\n"
 msgstr ""
 "\n"
-"# VPATH-s¯gestier\n"
+"# VPATH-s√∏gestier\n"
 
-#: vpath.c:588
-msgid "# No `vpath' search paths."
-msgstr "# Ingen 'vpath'-s¯gestier"
+#: src/vpath.c:599
+msgid "# No 'vpath' search paths."
+msgstr "# Ingen \"vpath\"-s√∏gestier."
 
-#: vpath.c:590
+#: src/vpath.c:601
 #, c-format
 msgid ""
 "\n"
-"# %u `vpath' search paths.\n"
+"# %u 'vpath' search paths.\n"
 msgstr ""
 "\n"
-"# %u 'vpath'-s¯gestier.\n"
+"# %u \"vpath\"-s√∏gestier.\n"
 
-#: vpath.c:593
+#: src/vpath.c:604
 msgid ""
 "\n"
-"# No general (`VPATH' variable) search path."
+"# No general ('VPATH' variable) search path."
 msgstr ""
 "\n"
-"# Ingen generel ('VPATH'-variabel) s¯gesti."
+"# Ingen generel (\"VPATH\"-variabel) s√∏gesti."
 
-#: vpath.c:599
+#: src/vpath.c:610
 msgid ""
 "\n"
-"# General (`VPATH' variable) search path:\n"
+"# General ('VPATH' variable) search path:\n"
 "# "
 msgstr ""
 "\n"
-"# Generel ('VPATH'-variabel) s¯gesti:\n"
+"# Generel (\"VPATH\"-variabel) s√∏gesti:\n"
 "# "
+
+#: src/w32/w32os.c:224
+#, fuzzy, c-format
+msgid "jobserver slots limited to %d\n"
+msgstr "Jobserverpladser begr√¶nset til %d\n"
+
+#: src/w32/w32os.c:240
+#, c-format
+msgid "creating jobserver semaphore: (Error %ld: %s)"
+msgstr "opretter jobserver-semafor: (Fejl %ld: %s)"
+
+#: src/w32/w32os.c:259
+#, fuzzy, c-format
+msgid "unable to open jobserver semaphore '%s': (Error %ld: %s)"
+msgstr "intern fejl: kan ikke √•bne jobserver-semafor \"%s\": (Fejl %ld: %s)"
+
+#: src/w32/w32os.c:264
+#, c-format
+msgid "Jobserver client (semaphore %s)\n"
+msgstr "Jobserverklient (semafor %s)\n"
+
+#: src/w32/w32os.c:312
+#, c-format
+msgid "release jobserver semaphore: (Error %ld: %s)"
+msgstr "frigiv jobserver-semafor: (Fejl %ld: %s)"
+
+#: src/w32/w32os.c:383
+#, c-format
+msgid "semaphore or child process wait: (Error %ld: %s)"
+msgstr "ventende p√• semafor eller underproces: (Fejl %ld: %s)"
+
+#: src/w32/w32os.c:451
+#, c-format
+msgid "cannot parse output sync mutex %s: %s"
+msgstr "kan ikke fortolke outputsynkroniseringsmutex %s: %s"
+
+#: src/w32/w32os.c:454
+#, c-format
+msgid "invalid output sync mutex: %s"
+msgstr "ugyldig outputsynkroniseringsmutex: %s"
+
+#~ msgid "target does not exist"
+#~ msgstr "m√•let findes ikke"
+
+#~ msgid "%s: %s: Command not found\n"
+#~ msgstr "%s: %s: Kommando ikke fundet\n"
+
+#~ msgid "%s[%u]: %s: Command not found\n"
+#~ msgstr "%s[%u]: %s: Kommando ikke fundet\n"
+
+#~ msgid "%s: Shell program not found"
+#~ msgstr "%s; Skalprogram ikke fundet"
+
+# build?
+#~ msgid "-O[TYPE] (--output-sync[=TYPE]) is not configured for this build."
+#~ msgstr ""
+#~ "-O[TYPE] (--output-sync[=TYPE]) er ikke konfigureret til denne "
+#~ "kompilering."
+
+#~ msgid "%s is suspending for 30 seconds..."
+#~ msgstr "%s er standset i 30 sekunder..."
+
+#~ msgid "done sleep(30). Continuing.\n"
+#~ msgstr "udf√∏rt sleep(30). Forts√¶tter.\n"
+
+#~ msgid "Unknown error %d"
+#~ msgstr "Ukendt fejl %d"
+
+#~ msgid "%s: user %lu (real %lu), group %lu (real %lu)\n"
+#~ msgstr "%s: bruger %lu (reelt %lu), gruppe %lu (reelt %lu)\n"
+
+#~ msgid "Initialized access"
+#~ msgstr "Indledende adgang"
+
+#~ msgid "User access"
+#~ msgstr "Brugeradgang"
+
+#~ msgid "Make access"
+#~ msgstr "Make-adgang"
+
+#~ msgid "Child access"
+#~ msgstr "Barneadgang"
+
+# fd = fildeskriptor
+#~ msgid "Jobserver client (fds %d,%d)\n"
+#~ msgstr "Jobserverklient (fd'er %d,%d)\n"
+
+#~ msgid "jobserver pipeline"
+#~ msgstr "jobserver-pipe"
+
+# "modifikationstid" her fordi √¶ndringstid er 'change time' som er noget andet!
+#~ msgid "Warning: File '%s' has modification time in the future"
+#~ msgstr "Advarsel: Modifikationstiden for filen \"%s\" er i fremtiden"
+
+#~ msgid " terminal."
+#~ msgstr " terminale."
+
+#~ msgid "#  Invalid value in `update_status' member!"
+#~ msgstr "#  Ugyldig v√¶rdi i 'update_status'-felt!"
+
+#~ msgid "*** [%s] Error 0x%x (ignored)"
+#~ msgstr "*** [%s] Fejl 0x%x (ignoreret)"
+
+#~ msgid "*** [%s] Error 0x%x"
+#~ msgstr "*** [%s] Fejl 0x%x"
+
+#~ msgid "Invoking recipe from %s:%lu to update target `%s'.\n"
+#~ msgstr "K√∏rer kommandoer fra %s:%lu for at opdatere m√•let '%s'.\n"
+
+#~ msgid "Invoking builtin recipe to update target `%s'.\n"
+#~ msgstr "K√∏rer indbyggede kommandoer for at opdatere m√•let '%s'.\n"
+
+#~ msgid "internal error: multiple --jobserver-fds options"
+#~ msgstr "intern fejl: flere '--jobserver-fds'-tilvalg"
+
+#~ msgid "dup jobserver"
+#~ msgstr "dup jobserver"
+
+#~ msgid "virtual memory exhausted"
+#~ msgstr "virtuel hukommelse opbrugt"
+
+#~ msgid "write error"
+#~ msgstr "skrivefejl"
+
+#~ msgid "%s # of strcache buffers: %d (* %d B/buffer = %d B)\n"
+#~ msgstr "%s # strcache-buffere: %d (* %d B/buffer = %d B)\n"
+
+#~ msgid ""
+#~ "\n"
+#~ "# strcache hash-table stats:\n"
+#~ "# "
+#~ msgstr ""
+#~ "\n"
+#~ "# statistik for strcache-hashtabeller:\n"
+#~ "# "
+
+#~ msgid "Warning: Empty redirection\n"
+#~ msgstr "Advarsel: Tom omdirigering\n"
+
+#~ msgid "internal error: `%s' command_state"
+#~ msgstr "intern fejl: '%s' command_state"
+
+#~ msgid "BUILTIN [%s][%s]\n"
+#~ msgstr "BUILTIN [%s][%s]\n"
+
+#~ msgid "BUILTIN RM %s\n"
+#~ msgstr "BUILTIN RM %s\n"
+
+#~ msgid "Unknown builtin command '%s'\n"
+#~ msgstr "Ukendt indbygget kommando '%s'\n"
+
+#~ msgid "Error, empty command\n"
+#~ msgstr "Fejl, tom kommando\n"
+
+#~ msgid "Redirected input from %s\n"
+#~ msgstr "Omdirigeret inddata from %s\n"
+
+#~ msgid "Redirected error to %s\n"
+#~ msgstr "Omdirigeret fejl to %s\n"
+
+#~ msgid "Redirected output to %s\n"
+#~ msgstr "Omdirigeret uddata til %s\n"
+
+#~ msgid "Error spawning, %d\n"
+#~ msgstr "Fejl ved spawn, %d\n"
 
 #~ msgid "Syntax error, still inside '\"'\n"
 #~ msgstr "Syntaksfejl, stadig inden i '\"'\n"
 
 #~ msgid "Got a SIGCHLD; %u unreaped children.\n"
-#~ msgstr "Fik et SIGCHLD; %u uh¯stede b¯rn.\n"
+#~ msgstr "Fik et SIGCHLD; %u uh√∏stede b√∏rn.\n"
+
+#~ msgid "-warning, CTRL-Y will leave sub-process(es) around.\n"
+#~ msgstr "-advarsel, CTRL-Y vil efterlade underproces(ser).\n"
 
 #~ msgid "Do not specify -j or --jobs if sh.exe is not available."
-#~ msgstr "Angiv ikke -j eller --jobs hvis sh.exe ikke er tilgÊngelig."
+#~ msgstr "Angiv ikke -j eller --jobs hvis sh.exe ikke er tilg√¶ngelig."
 
 #~ msgid "Resetting make for single job mode."
-#~ msgstr "SÊtter make tilbage til enkelt job-tilstand."
+#~ msgstr "S√¶tter make tilbage til enkelt job-tilstand."
+
+#~ msgid ""
+#~ "%sThis is free software; see the source for copying conditions.\n"
+#~ "%sThere is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A\n"
+#~ "%sPARTICULAR PURPOSE.\n"
+#~ msgstr ""
+#~ "%sDette er frit programmel; se kildeteksten for kopieringsbetingelser.\n"
+#~ "%sDer er INGEN garanti; end ikke for SALGBARHED eller EGNETHED TIL NOGET\n"
+#~ "%sBESTEMT FORM√ÖL.\n"
+
+#~ msgid "extraneous `endef'"
+#~ msgstr "fremmed 'endef'"
+
+#~ msgid "empty `override' directive"
+#~ msgstr "tomt 'override'-direktiv"
+
+#~ msgid "invalid `override' directive"
+#~ msgstr "ugyldigt 'override'-direktiv"
 
 #~ msgid "no file name for `%sinclude'"
 #~ msgstr "intet filnavn for '%sinclude'"
 
 #~ msgid "target `%s' leaves prerequisite pattern empty"
-#~ msgstr "mÂl '%s' efterlader forudsÊtningsm¯nstret tomt"
+#~ msgstr "m√•l '%s' efterlader foruds√¶tningsm√∏nstret tomt"
 
 #~ msgid ""
 #~ "\n"
@@ -2023,7 +2688,7 @@ msgstr ""
 #~ msgstr "# %.3f filer per spand i gennemsnit, maks. %u filer i en spand.\n"
 
 #~ msgid "Suspend process to allow a debugger to attach"
-#~ msgstr "Stands proces for at tillade et fejls¯gningsprogram at hÊnge sig pÂ"
+#~ msgstr "Stands proces for at tillade et fejls√∏gningsprogram at h√¶nge sig p√•"
 
 #~ msgid "# No variables."
 #~ msgstr "# Ingen variabler."

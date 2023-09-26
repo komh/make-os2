@@ -1,41 +1,48 @@
 # List of source files containing translatable strings.
-# Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006 Free Software
-# Foundation, Inc.
+# Copyright (C) 2000-2023 Free Software Foundation, Inc.
 # This file is part of GNU Make.
 #
-# GNU Make is free software; you can redistribute it and/or modify it under the
-# terms of the GNU General Public License as published by the Free Software
-# Foundation; either version 2, or (at your option) any later version.
+# GNU Make is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free Software
+# Foundation; either version 3 of the License, or (at your option) any later
+# version.
 #
 # GNU Make is distributed in the hope that it will be useful, but WITHOUT ANY
-# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
-# A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+# FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more
+# details.
 #
 # You should have received a copy of the GNU General Public License along with
-# GNU Make; see the file COPYING.  If not, write to the Free Software
-# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
+# this program.  If not, see <https://www.gnu.org/licenses/>.
 
-ar.c
-arscan.c
-commands.c
-dir.c
-expand.c
-file.c
-function.c
-getopt.c
-hash.c
-implicit.c
-job.c
-main.c
-misc.c
-read.c
-remake.c
-remote-cstms.c
-rule.c
-signame.c
-strcache.c
-variable.c
-variable.h
-vmsfunctions.c
-vmsjobs.c
-vpath.c
+src/ar.c
+src/arscan.c
+src/commands.c
+src/dir.c
+src/expand.c
+src/file.c
+src/function.c
+src/getopt.c
+src/guile.c
+src/hash.c
+src/implicit.c
+src/job.c
+src/load.c
+src/main.c
+src/misc.c
+src/output.c
+src/output.h
+src/posixos.c
+src/read.c
+src/remake.c
+src/remote-cstms.c
+src/rule.c
+src/shuffle.c
+src/signame.c
+src/strcache.c
+src/variable.c
+src/variable.h
+src/vmsfunctions.c
+src/vmsjobs.c
+src/vpath.c
+src/w32/w32os.c
