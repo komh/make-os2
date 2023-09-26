@@ -1,5 +1,10 @@
 extproc sh
 
+d=$(dirname "$0" | tr '\\' /)
+
+n=configure
+test -f "$d/$n." || { echo "\`$d/$n' not found !!!"; exit 1; }
+
 export ac_executable_extensions=".exe"
 export CPPFLAGS="-D__ST_MT_ERRNO__"
 export CFLAGS="-O2 -Zomf -Zmt"
@@ -11,5 +16,5 @@ fi
 export RANLIB="echo"
 export AR="emxomfar"
 
-test -f ./configure. || { echo "\`./configure not found !!!"; exit 1; }
-./configure. --without-included-gettext "$@"
+opts=""
+"$d/$n" $opts "$@" 2>&1 | tee "$n.log"
