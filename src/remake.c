@@ -1410,12 +1410,6 @@ f_mtime (struct file *file, int search)
   else
 #endif
     {
-#ifdef __EMX__
-      const char *saved_name = file->name;
-      size_t fname_len;
-
-try_again_with_dot_exe:
-#endif
       mtime = name_mtime (file->name);
 
       if (mtime == NONEXISTENT_MTIME && search && !file->ignore_vpath)
@@ -1460,27 +1454,30 @@ try_again_with_dot_exe:
             }
         }
 #ifdef __EMX__
-      if (mtime == NONEXISTENT_MTIME)
-        {
-          if (stricmp (_getext2 (file->name), ".exe"))
-            {
-              fname_len = strlen (file->name);
+      {
+        static const char *no_exe_check = (const char *) -1;
 
-              file->name = alloca (fname_len + 4/*.exe*/ + 1);
-              memcpy ((char *)file->name, saved_name, fname_len);
-              memcpy ((char *)file->name + fname_len, ".exe", 4 + 1);
+        if (no_exe_check == (const char *) -1)
+          no_exe_check = getenv("GNU_MAKE_NO_EXE_CHECK");
 
-              goto try_again_with_dot_exe;
-            }
+        if (mtime == NONEXISTENT_MTIME
+            && stricmp (_getext2 (file->name), ".exe") && no_exe_check == 0)
+          {
+            /* Try again with .exe.  */
+            size_t fname_len = strlen (file->name);
+            char *exename = alloca (fname_len + 4/*.exe*/ + 1);
+            struct file *exefile;
+
+            memcpy (exename, file->name, fname_len);
+            memcpy (exename + fname_len, ".exe", 4 + 1);
+
+            exefile = lookup_file (exename);
+            if (exefile == 0)
+              exefile = enter_file (strcache_add (exename));
+            mtime = f_mtime (exefile, search);
+            check_renamed (exefile);
         }
-
-      fname_len = strlen (saved_name);
-
-      /* If found in VPATH, use it. Otherwise restore file->name. */
-      if (strlen (file->name) == fname_len + 4
-          && !strnicmp (file->name, saved_name, fname_len)
-          && !stricmp (file->name + fname_len, ".exe"))
-        file->name = saved_name;
+      }
 #endif
     }
 
